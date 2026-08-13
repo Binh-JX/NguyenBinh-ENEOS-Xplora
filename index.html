@@ -66,7 +66,7 @@
     }
     </script>
 
-    <!-- CSS PHÓNG TO KHUNG VÀ CHỮ LÊN GẤP 3 LẦN -->
+    <!-- CSS BAO GỒM TOÀN BỘ ĐỊNH DẠNG HOÀN CHỈNH -->
     <style>
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -92,14 +92,45 @@
             display: block;
         }
 
-        /* Hộp text được phóng to và làm nổi bật ở góc trái */
+        /* THANH MENU 4 NGÔN NGỮ CHUẨN (ĐÃ FIX ĐỂ LUÔN NỔI BẬT TRÊN CÙNG) */
+        .lang-switch {
+            position: absolute;
+            top: 25px;
+            left: 35px;
+            background: rgba(0, 0, 0, 0.7); 
+            padding: 12px 25px;
+            border-radius: 30px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            line-height: 1;
+        }
+
+        .lang-switch a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 2.2em; /* Phóng to chữ cho cân xứng với trang */
+            font-weight: 600;
+        }
+
+        .lang-switch a:hover {
+            color: #ffdf6d;
+        }
+
+        .lang-switch span {
+            color: #aaa;
+            font-size: 2.2em;
+        }
+
+        /* Hộp text được phóng to và làm nổi bật ở góc phải */
         .overlay-box {
             position: absolute;
             bottom: 35px;
             right: 45px;
-            width: 60%; /* Mở rộng chiều rộng khung */
+            width: 60%; 
             max-width: 750px;
-            background: rgba(255, 255, 255, 0.92); /* Nền trắng sáng, sang trọng */
+            background: rgba(255, 255, 255, 0.92); 
             padding: 35px 40px;
             border-radius: 12px;
             box-shadow: 0 6px 25px rgba(0,0,0,0.35);
@@ -110,12 +141,12 @@
         .overlay-box h3 {
             color: #0056b3;
             margin: 0 0 12px 0;
-            font-size: 5.0em; /* Phóng to tiêu đề */
+            font-size: 5.0em; 
         }
 
         .overlay-box p {
             margin: 0 0 15px 0;
-            font-size: 3.5em; /* Phóng to chữ mô tả gấp 3 lần */
+            font-size: 3.5em; 
             color: #222;
         }
 
@@ -137,16 +168,18 @@
 </head>
 <body>
 
-    <!-- BANNER VỚI TEXT ĐÃ PHÓNG TO GẤP 3 LẦN -->
+    <!-- BANNER VÀ MENU NGÔN NGỮ (BỌC CHUNG ĐỂ MENU LUÔN GẮN TRÊN ẢNH) -->
     <div class="banner-wrapper">
-<!-- Thanh menu chọn 4 ngôn ngữ -->
+        
+        <!-- THANH CHUYỂN ĐỔI 4 NGÔN NGỮ -->
         <div class="lang-switch">
             <a href="index.html">🇻🇳 VN</a> <span>|</span> 
             <a href="en.html">🇬🇧 EN</a> <span>|</span> 
             <a href="jp.html">🇯🇵 JP</a> <span>|</span> 
             <a href="zh.html">🇨🇳 ZH</a>
         </div>
-                <img src="Banner-ThanhBinh-Hub.png" alt="Thanh Binh Homepage Banner">
+
+        <img src="Banner-ThanhBinh-Hub.png" alt="Thanh Binh Homepage Banner">
         
         <div class="overlay-box">
             <h3>Chân dung chuyên môn & Hoạt động</h3>
