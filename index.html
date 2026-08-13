@@ -66,85 +66,90 @@
     }
     </script>
 
-    <!-- CSS HOÀN THIỆN: CHỮ TO, CĂN LỀ TRÁI, TRÀN VIỀN -->
+    <!-- CSS ĐƯA TEXT LÊN GÓC TRÁI DƯỚI BANNER -->
     <style>
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             margin: 0; 
             padding: 0; 
-            line-height: 1.7; 
-            color: #2c3e50; 
+            line-height: 1.6; 
+            color: #333; 
             background-color: #f4f6f8;
-            text-align: left; /* Căn lề trái toàn bộ trang */
         }
         
-        /* Banner tràn ngang tuyệt đối */
-        .banner-container {
+        /* Khung bao ngoài banner và text đè lên */
+        .banner-wrapper {
+            position: relative;
             width: 100%;
             margin: 0;
             padding: 0;
             line-height: 0;
         }
 
-        .banner-container img {
+        .banner-wrapper img {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        /* Khung nội dung rộng rãi, cân đối */
-        .container {
-            max-width: 1000px;
-            margin: 25px auto 50px auto;
-            padding: 0 25px;
-        }
-
-        .bio-section {
-            background: #fff;
-            padding: 45px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            text-align: left; /* Đảm bảo phần hộp nội dung căn lề trái */
-        }
-
-        h2.section-title {
-            color: #0056b3;
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 12px;
-            margin-top: 0;
-            font-size: 1.8em;
-            margin-bottom: 22px;
+        /* Hộp text nằm đè lên góc trái dưới banner */
+        .overlay-box {
+            position: absolute;
+            bottom: 25px;
+            left: 35px;
+            max-width: 550px;
+            background: rgba(255, 255, 255, 0.90); /* Nền trắng mờ sang trọng */
+            padding: 20px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             text-align: left;
+            line-height: 1.5;
         }
 
-        /* Tăng kích thước chữ phần mô tả cho to rõ, dễ đọc */
-        .bio-section p {
-            font-size: 1.15em; 
-            margin-bottom: 18px;
-            color: #333333;
+        .overlay-box h3 {
+            color: #0056b3;
+            margin: 0 0 8px 0;
+            font-size: 1.2em;
         }
 
-        strong {
-            color: #111111;
+        .overlay-box p {
+            margin: 0 0 8px 0;
+            font-size: 0.95em;
+            color: #222;
+        }
+
+        .overlay-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Phần chân trang gọn gàng chỉ còn ngày tháng cập nhật */
+        .footer-update {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 25px;
+            text-align: right;
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
-    <!-- BANNER TRÀN NGANG -->
-    <div class="banner-container">
+    <!-- BANNER CÓ TEXT ĐÈ GÓC TRÁI DƯỚI -->
+    <div class="banner-wrapper">
         <img src="Banner-ThanhBinh-Hub.png" alt="Thanh Binh Homepage Banner">
-    </div>
-
-    <!-- PHẦN MÔ TẢ ĐÃ TĂNG CỠ CHỮ VÀ CĂN LỀ TRÁI -->
-    <div class="container">
-        <div class="bio-section">
-            <h2 class="section-title">Chân dung chuyên môn & Hoạt động</h2>
+        
+        <div class="overlay-box">
+            <h3>Chân dung chuyên môn & Hoạt động</h3>
             <p><strong>Tiến sĩ Địa chất | Chuyên gia đổi mới công nghệ tại e-TEC, ENEOS Xplora & Sunhouse</strong></p>
             <p>Chào mừng bạn đến với không gian số cá nhân của tôi. Nơi chia sẻ hành trình chuyên môn, các dự án âm nhạc giao lưu văn hóa Việt - Nhật, hoạt động cộng đồng và dịch vụ lưu trú tại Hạ Long.</p>
-            
-            <p><em>Cập nhật mới nhất: Tháng 8/2026</em></p>
         </div>
+    </div>
+
+    <!-- PHẦN DƯỚI CHỈ CÒN NGÀY CẬP NHẬT -->
+    <div class="footer-update">
+        Cập nhật mới nhất: 13/Tháng 8/2026
     </div>
 
 </body>
