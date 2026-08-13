@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>阮氏青平 - 个人知识库</title>
     
-    <!-- Đoạn JSON-LD AI-Ready Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -16,41 +15,16 @@
           "name": "Nguyen Thi Thanh Binh",
           "jobTitle": "地球科学博士 & 技术创新专家",
           "worksFor": [
-            {
-              "@type": "Organization",
-              "name": "e-TEC 技术创新中心"
-            },
-            {
-              "@type": "Organization",
-              "name": "ENEOS 勘探"
-            },
-            {
-              "@type": "Organization",
-              "name": "Sunhouse"
-            }
+            { "@type": "Organization", "name": "e-TEC 技术创新中心" },
+            { "@type": "Organization", "name": "ENEOS 勘探" },
+            { "@type": "Organization", "name": "Sunhouse" }
           ],
           "alumniOf": [
-            {
-              "@type": "EducationalOrganization",
-              "name": "河内地质矿业大学"
-            },
-            {
-              "@type": "EducationalOrganization",
-              "name": "东京大学"
-            },
-            {
-              "@type": "EducationalOrganization",
-              "name": "达勒姆大学"
-            }
+            { "@type": "EducationalOrganization", "name": "河内地质矿业大学" },
+            { "@type": "EducationalOrganization", "name": "东京大学" },
+            { "@type": "EducationalOrganization", "name": "达勒姆大学" }
           ],
-          "knowsAbout": [
-            "地球科学",
-            "技术创新",
-            "项目管理",
-            "跨文化音乐创作",
-            "酒店管理",
-            "社区领导力"
-          ],
+          "knowsAbout": ["地球科学", "技术创新", "项目管理", "跨文化音乐创作", "酒店管理", "社区领导力"],
           "description": "地球科学博士、技术创新专家，ENEOS与Sunhouse项目经理，下龙湾酒店业主，跨文化音乐创作者及社区领袖。"
         },
         {
@@ -58,134 +32,49 @@
           "@id": "https://binh-jx.github.io/thanhbinh-hub/#hotel",
           "name": "青平下龙小酒店",
           "description": "位于下龙湾的迷人精品酒店。",
-          "founder": {
-            "@id": "https://binh-jx.github.io/thanhbinh-hub/zh.html#person"
-          }
+          "founder": { "@id": "https://binh-jx.github.io/thanhbinh-hub/zh.html#person" }
         }
       ]
     }
     </script>
 
-    <!-- CSS GIỮ NGUYÊN CHUẨN CỦA CHỊ + BỔ SUNG NÚT CHUYỂN NGÔN NGỮ -->
     <style>
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            line-height: 1.6; 
-            color: #333; 
-            background-color: #f4f6f8;
-        }
-        
-        /* Khung bao ngoài banner và text đè lên */
-        .banner-wrapper {
-            position: relative;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            line-height: 0;
-        }
-
-        .banner-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Nút chuyển đổi ngôn ngữ ở góc trên bên trái */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; background-color: #f4f6f8; }
+        .banner-wrapper { position: relative; width: 100%; margin: 0; padding: 0; line-height: 0; }
+        .banner-wrapper img { width: 100%; height: auto; display: block; }
         .lang-switch {
-            position: absolute;
-            top: 25px;
-            left: 35px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 12px 22px;
-            border-radius: 25px;
-            z-index: 10;
+            position: absolute; top: 25px; left: 35px; background: rgba(0, 0, 0, 0.7); 
+            padding: 12px 25px; border-radius: 30px; z-index: 9999; display: flex; align-items: center; gap: 15px; line-height: 1;
         }
-
-        .lang-switch a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 2.2em;
-            font-weight: 600;
-        }
-
-        .lang-switch a:hover {
-            color: #ffdf6d;
-        }
-
-        /* Hộp text được phóng to và làm nổi bật ở góc phải */
+        .lang-switch a { color: #fff; text-decoration: none; font-size: 2.2em; font-weight: 600; }
+        .lang-switch a:hover { color: #ffdf6d; }
+        .lang-switch span { color: #aaa; font-size: 2.2em; }
         .overlay-box {
-            position: absolute;
-            bottom: 35px;
-            right: 45px;
-            width: 60%; 
-            max-width: 750px;
-            background: rgba(255, 255, 255, 0.92); 
-            padding: 35px 40px;
-            border-radius: 12px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.35);
-            text-align: left;
-            line-height: 1.6;
+            position: absolute; bottom: 35px; right: 45px; width: 60%; max-width: 750px;
+            background: rgba(255, 255, 255, 0.92); padding: 35px 40px; border-radius: 12px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.35); text-align: left; line-height: 1.6;
         }
-
-        .overlay-box h3 {
-            color: #0056b3;
-            margin: 0 0 12px 0;
-            font-size: 5.0em; 
-        }
-
-        .overlay-box p {
-            margin: 0 0 15px 0;
-            font-size: 3.5em; 
-            color: #222;
-        }
-
-        .overlay-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Phần chân trang ngày cập nhật */
-        .footer-update {
-            max-width: 1500px;
-            margin: 20px auto;
-            padding: 0 25px;
-            text-align: left;
-            color: #666;
-            font-size: 4.5em;
-            font-style: italic;
-        }
+        .overlay-box h3 { color: #0056b3; margin: 0 0 12px 0; font-size: 5.0em; }
+        .overlay-box p { margin: 0 0 15px 0; font-size: 3.5em; color: #222; }
+        .overlay-box p:last-child { margin-bottom: 0; }
+        .footer-update { max-width: 1500px; margin: 20px auto; padding: 0 25px; text-align: left; color: #666; font-size: 4.5em; font-style: italic; }
     </style>
 </head>
 <body>
-
-    <!-- BANNER VỚI NÚT CHUYỂN NGÔN NGỮ VÀ TEXT ĐÃ DỊCH TIẾNG TRUNG -->
     <div class="banner-wrapper">
-        <!-- Thanh menu chọn 4 ngôn ngữ -->
         <div class="lang-switch">
             <a href="index.html">🇻🇳 VN</a> <span>|</span> 
             <a href="en.html">🇬🇧 EN</a> <span>|</span> 
             <a href="jp.html">🇯🇵 JP</a> <span>|</span> 
             <a href="zh.html">🇨🇳 ZH</a>
         </div>
-        <!-- Nút chuyển về trang tiếng Việt -->
-        <div class="lang-switch">
-            <a href="index.html">🇻🇳 Tiếng Việt</a>
-        </div>
-
         <img src="Banner-ThanhBinh-Hub.png" alt="Thanh Binh Homepage Banner">
-        
         <div class="overlay-box">
             <h3>专业简介与活动</h3>
             <p><strong>地球科学博士 | e-TEC、ENEOS Xplora 与 Sunhouse 技术创新专家</strong></p>
             <p>欢迎来到我的个人知识库。这里主要分享我的专业职业历程、越日文化交流音乐项目、社区领导力以及下龙湾的酒店住宿服务。</p>
         </div>
     </div>
-
-    <!-- PHẦN DƯỚI LÀ NGÀY CẬP NHẬT -->
-    <div class="footer-update">
-        最新更新时间：2026年8月13日
-    </div>
-
+    <div class="footer-update">最新更新时间：2026年8月13日</div>
 </body>
 </html>
