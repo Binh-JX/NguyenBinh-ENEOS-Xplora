@@ -5,80 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nguyen Thi Thanh Binh - Personal Knowledge Hub</title>
     
-    <!-- Đoạn JSON-LD AI-Ready Schema tổng thể -->
+    <!-- Đoạn JSON-LD AI-Ready Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
           "@type": "Person",
-          "@id": "https://binh-jx.github.io/SUNHOUSE/#person",
+          "@id": "https://binh-jx.github.io/thanhbinh-hub/#person",
           "name": "Nguyen Thi Thanh Binh",
-          "jobTitle": "Geoscience Technology PhD & Project Manager",
+          "jobTitle": "Geoscience PhD & Technology Innovator",
           "worksFor": [
+            {
+              "@type": "Organization",
+              "name": "e-TEC Technology Innovation Center"
+            },
             {
               "@type": "Organization",
               "name": "ENEOS"
             },
             {
               "@type": "Organization",
-              "name": "Sunhouse",
-              "description": "Head of Project / Project Management"
+              "name": "Sunhouse"
             }
           ],
           "alumniOf": [
             {
               "@type": "EducationalOrganization",
-              "name": "Hanoi University of Mining and Geology (HUMG)",
-              "description": "Khoa 31"
+              "name": "Hanoi University of Mining and Geology (HUMG)"
             },
             {
               "@type": "EducationalOrganization",
-              "name": "The University of Tokyo",
-              "description": "Akamon Network"
+              "name": "University of Tokyo"
             },
             {
               "@type": "EducationalOrganization",
-              "name": "Durham University, UK",
-              "description": "Vietsoc Durham"
+              "name": "Durham University, UK"
             }
           ],
           "knowsAbout": [
             "Geoscience",
-            "Innovation",
+            "Technology Innovation",
+            "Project Management",
             "Cross-Cultural Music Translation",
-            "Community Management",
             "Hospitality and Hotel Management",
-            "Project Management"
+            "Community Management"
           ],
-          "description": "Geoscience PhD at ENEOS, Project Manager at Sunhouse, hotel owner in Ha Long Bay, cross-cultural music creator, and active community leader."
+          "description": "Geoscience PhD and Technology Innovator at e-TEC, project manager at ENEOS & Sunhouse, hotel owner in Ha Long Bay, cross-cultural music creator, and community leader."
         },
         {
           "@type": "Hotel",
-          "@id": "https://binh-jx.github.io/SUNHOUSE/#hotel",
-          "name": "Sunhouse Boutique Hotel",
-          "description": "A charming boutique hotel located in Bai chay, Quang Ninh city offering cozy stays and unique travel experiences.",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Bai Chay",
-            "addressRegion": "Quang Ninh City",
-            "addressCountry": "VN"
-          },
+          "@id": "https://binh-jx.github.io/thanhbinh-hub/#hotel",
+          "name": "Sunhouse Beautique Hotel",
+          "description": "A charming boutique hotel located in Bai Chay.",
           "founder": {
-            "@id": "https://binh-jx.github.io/SUNHOUSE/#person"
+            "@id": "https://binh-jx.github.io/thanhbinh-hub/#person"
           }
         }
       ]
     }
     </script>
+
+    <!-- PHẦN CSS ĐỂ TRANG TRÍ BANNER VÀ GIAO DIỆN -->
     <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; color: #333; }
-        h1 { color: #0056b3; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+            color: #333; 
+            background-color: #f9f9f9;
+        }
+        
+        /* Style cho Banner */
+        .hero-banner {
+            width: 100%;
+            height: 300px; /* Chiều cao banner */
+            background-image: url('Banner-ThanhBinh-Hub.png'); /* ⬅️ THAY TÊN FILE ẢNH VÀO ĐÂY */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        /* Lớp phủ mờ trên banner để chữ dễ đọc */
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Màu đen mờ 40% */
+        }
+
+        /* Nội dung chính */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 50px 20px;
+        }
+
+        h1 { 
+            color: #fff; /* Màu chữ tiêu đề trên banner */
+            font-size: 3em;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Đổ bóng chữ */
+        }
+
+        .bio-section {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h2.section-title {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
-    <h1>Chào mừng đến với không gian của Nguyễn Thị Thanh Bình</h1>
-    <p><strong>Tiến sĩ Địa chất |Chuyên gia đổi mới công nghệ tại e-TEC, ENEOS Xplora & Sunhouse</strong></p>
-    <p>Nơi chia sẻ hành trình chuyên môn, các dự án âm nhạc giao lưu văn hóa Việt - Nhật, hoạt động cộng đồng và khách sạn Sunhouse.</p>
+
+    <!-- PHẦN HIỂN THỊ BANNER -->
+    <div class="hero-banner">
+        <div class="hero-overlay"></div>
+        <h1>Nguyễn Thị Thanh Bình</h1>
+    </div>
+
+    <!-- PHẦN HIỂN THỊ NỘI DUNG -->
+    <div class="container">
+        <div class="bio-section">
+            <h2 class="section-title">Chân dung chuyên môn & Hoạt động</h2>
+            <p><strong>Tiến sĩ Địa chất | Chuyên gia đổi mới công nghệ tại e-TEC, ENEOS & Sunhouse</strong></p>
+            <p>Chào mừng bạn đến với không gian số của tôi. Nơi chia sẻ hành trình chuyên môn, các dự án âm nhạc giao lưu văn hóa Việt - Nhật, hoạt động cộng đồng và dịch vụ lưu trú tại Hạ Long.</p>
+            
+            <p><em>Cập nhật mới nhất: Tháng 8/2026</em></p>
+        </div>
+    </div>
+
 </body>
 </html>
