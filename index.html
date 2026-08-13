@@ -66,7 +66,7 @@
     }
     </script>
 
-    <!-- CSS HOÀN CHỈNH: HIỂN THỊ TRỌN VẸN BANNER -->
+    <!-- CSS TỐI ƯU HIỂN THỊ TRÀN VIỀN, SÁT NHAU -->
     <style>
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -77,23 +77,25 @@
             background-color: #f4f6f8;
         }
         
-        /* Cấu hình banner hiển thị nguyên vẹn, không bị cắt */
-        .hero-banner {
+        /* Cấu hình banner dạng ảnh hiển thị tràn ngang tuyệt đối, không bị cắt */
+        .banner-container {
             width: 100%;
-            height: 420px; /* Chiều cao cân đối cho banner dạng ngang */
-            background-image: url('Banner-ThanhBinh-Hub.png');
-            background-size: contain; /* HIỂN THỊ TRỌN VẸN ẢNH, KHÔNG BỊ CẮT MẤT PHẦN NÀO */
-            background-position: center top; /* Canh từ trên xuống */
-            background-repeat: no-repeat;
-            background-color: #ffffff; /* Nền trắng lót hai bên nếu màn hình quá rộng */
-            margin-bottom: 20px;
+            margin: 0;
+            padding: 0;
+            line-height: 0; /* Loại bỏ khoảng trắng thừa dưới ảnh */
         }
 
-        /* Khung chứa phần nội dung sát ngay bên dưới */
+        .banner-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Khung chứa phần nội dung nằm sát ngay bên dưới banner */
         .container {
             max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px 40px 20px;
+            margin: 20px auto 40px auto; /* Khoảng cách phía trên rất gần banner */
+            padding: 0 20px;
         }
 
         .bio-section {
@@ -119,10 +121,12 @@
 </head>
 <body>
 
-    <!-- BANNER HIỂN THỊ ĐỦ TRÊN DƯỚI -->
-    <div class="hero-banner"></div>
+    <!-- BANNER DẠNG ẢNH TRÀN NGANG, ĐỦ TRÊN DƯỚI -->
+    <div class="banner-container">
+        <img src="Banner-ThanhBinh-Hub.png" alt="Thanh Binh Homepage Banner">
+    </div>
 
-    <!-- PHẦN MÔ TẢ NẰM NGAY BÊN DƯỚI -->
+    <!-- PHẦN MÔ TẢ NẰM SÁT NGAY BÊN DƯỚI -->
     <div class="container">
         <div class="bio-section">
             <h2 class="section-title">Chân dung chuyên môn & Hoạt động</h2>
