@@ -66,7 +66,7 @@
     }
     </script>
 
-    <!-- CSS TỐI ƯU GIAO DIỆN GỌN GÀNG -->
+    <!-- CSS HOÀN CHỈNH: HIỂN THỊ TRỌN VẸN BANNER -->
     <style>
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -77,18 +77,19 @@
             background-color: #f4f6f8;
         }
         
-        /* Thu nhỏ banner vừa đẹp trên màn hình, không bị tràn */
+        /* Cấu hình banner hiển thị nguyên vẹn, không bị cắt */
         .hero-banner {
             width: 100%;
-            height: 380px; /* Thu nhỏ chiều cao banner vừa vặn */
+            height: 420px; /* Chiều cao cân đối cho banner dạng ngang */
             background-image: url('Banner-ThanhBinh-Hub.png');
-            background-size: cover; /* Phủ kín khung banner */
-            background-position: center center; /* Canh giữa ảnh */
+            background-size: contain; /* HIỂN THỊ TRỌN VẸN ẢNH, KHÔNG BỊ CẮT MẤT PHẦN NÀO */
+            background-position: center top; /* Canh từ trên xuống */
             background-repeat: no-repeat;
-            margin-bottom: 25px; /* Khoảng cách sát vừa phải với phần mô tả */
+            background-color: #ffffff; /* Nền trắng lót hai bên nếu màn hình quá rộng */
+            margin-bottom: 20px;
         }
 
-        /* Khung chứa phần nội dung */
+        /* Khung chứa phần nội dung sát ngay bên dưới */
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -118,10 +119,10 @@
 </head>
 <body>
 
-    <!-- BANNER HIỂN THỊ GỌN GÀNG -->
+    <!-- BANNER HIỂN THỊ ĐỦ TRÊN DƯỚI -->
     <div class="hero-banner"></div>
 
-    <!-- PHẦN MÔ TẢ NẰM SÁT NGAY BÊN DƯỚI -->
+    <!-- PHẦN MÔ TẢ NẰM NGAY BÊN DƯỚI -->
     <div class="container">
         <div class="bio-section">
             <h2 class="section-title">Chân dung chuyên môn & Hoạt động</h2>
