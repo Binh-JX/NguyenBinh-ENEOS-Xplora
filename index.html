@@ -66,7 +66,7 @@
     }
     </script>
 
-    <!-- PHẦN CSS ĐỂ TỐI ƯU GIAO DIỆN -->
+    <!-- CSS TỐI ƯU GIAO DIỆN GỌN GÀNG -->
     <style>
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -74,42 +74,41 @@
             padding: 0; 
             line-height: 1.6; 
             color: #333; 
-            background-color: #f9f9f9;
-            padding-bottom: 50px; /* Khoảng cách dưới chân trang */
+            background-color: #f4f6f8;
         }
         
-        /* Style cho Banner MỚI (Tối ưu chiều cao và hiển thị) */
+        /* Thu nhỏ banner vừa đẹp trên màn hình, không bị tràn */
         .hero-banner {
             width: 100%;
-            height: 650px; /* TĂNG CHIỀU CAO BANNER LÊN 650px */
-            background-image: url('Banner-ThanhBinh-Hub.png'); /* Giữ nguyên tên file ảnh */
-            background-size: contain; /* Đảm bảo hiển thị toàn bộ ảnh, không bị cắt */
-            background-position: top center; /* Canh ảnh từ trên xuống */
+            height: 380px; /* Thu nhỏ chiều cao banner vừa vặn */
+            background-image: url('Banner-ThanhBinh-Hub.png');
+            background-size: cover; /* Phủ kín khung banner */
+            background-position: center center; /* Canh giữa ảnh */
             background-repeat: no-repeat;
-            margin-bottom: 40px;
+            margin-bottom: 25px; /* Khoảng cách sát vừa phải với phần mô tả */
         }
 
-        /* Nội dung chính (Giới thiệu) */
+        /* Khung chứa phần nội dung */
         .container {
-            max-width: 950px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 20px 40px 20px;
         }
 
         .bio-section {
             background: #fff;
-            padding: 45px;
+            padding: 35px;
             border-radius: 8px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.05); /* Bóng đổ nhẹ */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         h2.section-title {
             color: #0056b3;
             border-bottom: 2px solid #0056b3;
-            padding-bottom: 12px;
+            padding-bottom: 10px;
             margin-top: 0;
-            font-size: 1.8em;
-            margin-bottom: 25px;
+            font-size: 1.6em;
+            margin-bottom: 20px;
         }
 
         strong {
@@ -119,10 +118,10 @@
 </head>
 <body>
 
-    <!-- PHẦN HIỂN THỊ BANNER (Đã chỉnh sửa) -->
+    <!-- BANNER HIỂN THỊ GỌN GÀNG -->
     <div class="hero-banner"></div>
 
-    <!-- PHẦN HIỂN THỊ NỘI DUNG (Chỉ giữ lại phần Chân dung chuyên môn) -->
+    <!-- PHẦN MÔ TẢ NẰM SÁT NGAY BÊN DƯỚI -->
     <div class="container">
         <div class="bio-section">
             <h2 class="section-title">Chân dung chuyên môn & Hoạt động</h2>
