@@ -66,7 +66,7 @@
     }
     </script>
 
-    <!-- CSS ĐƯA TEXT LÊN GÓC TRÁI DƯỚI BANNER -->
+    <!-- CSS PHÓNG TO KHUNG VÀ CHỮ LÊN GẤP 3 LẦN -->
     <style>
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -92,29 +92,30 @@
             display: block;
         }
 
-        /* Hộp text nằm đè lên góc trái dưới banner */
+        /* Hộp text được phóng to và làm nổi bật ở góc trái */
         .overlay-box {
             position: absolute;
-            bottom: 25px;
-            left: 35px;
-            max-width: 550px;
-            background: rgba(255, 255, 255, 0.90); /* Nền trắng mờ sang trọng */
-            padding: 20px 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            bottom: 35px;
+            left: 45px;
+            width: 50%; /* Mở rộng chiều rộng khung */
+            max-width: 750px;
+            background: rgba(255, 255, 255, 0.92); /* Nền trắng sáng, sang trọng */
+            padding: 35px 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.35);
             text-align: left;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .overlay-box h3 {
             color: #0056b3;
-            margin: 0 0 8px 0;
-            font-size: 1.2em;
+            margin: 0 0 12px 0;
+            font-size: 1.8em; /* Phóng to tiêu đề */
         }
 
         .overlay-box p {
-            margin: 0 0 8px 0;
-            font-size: 0.95em;
+            margin: 0 0 15px 0;
+            font-size: 1.25em; /* Phóng to chữ mô tả gấp 3 lần */
             color: #222;
         }
 
@@ -122,21 +123,21 @@
             margin-bottom: 0;
         }
 
-        /* Phần chân trang gọn gàng chỉ còn ngày tháng cập nhật */
+        /* Phần chân trang ngày cập nhật */
         .footer-update {
             max-width: 1000px;
             margin: 20px auto;
             padding: 0 25px;
             text-align: right;
             color: #666;
-            font-size: 0.9em;
+            font-size: 0.95em;
             font-style: italic;
         }
     </style>
 </head>
 <body>
 
-    <!-- BANNER CÓ TEXT ĐÈ GÓC TRÁI DƯỚI -->
+    <!-- BANNER VỚI TEXT ĐÃ PHÓNG TO GẤP 3 LẦN -->
     <div class="banner-wrapper">
         <img src="Banner-ThanhBinh-Hub.png" alt="Thanh Binh Homepage Banner">
         
@@ -147,9 +148,9 @@
         </div>
     </div>
 
-    <!-- PHẦN DƯỚI CHỈ CÒN NGÀY CẬP NHẬT -->
+    <!-- PHẦN DƯỚI LÀ NGÀY CẬP NHẬT -->
     <div class="footer-update">
-        Cập nhật mới nhất: 13/Tháng 8/2026
+        Cập nhật mới nhất: Tháng 8/2026
     </div>
 
 </body>
