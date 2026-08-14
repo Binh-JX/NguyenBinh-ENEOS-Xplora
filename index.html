@@ -6,10 +6,10 @@
     <title>Nguyễn Thị Thanh Bình - Personal Knowledge Hub</title>
     
     <style>
-body, html { 
+        body, html { 
             margin: 0; padding: 0; height: 100%; width: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #000; /* Nền đen để lót nếu màn hình có tỷ lệ khác ảnh */
+            background-color: #fff; /* Nền trắng để liền mạch, mất hẳn viền đen */
         }
         
         .banner-container {
@@ -17,46 +17,46 @@ body, html {
             width: 100%;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
         }
 
-        /* Chỉnh chỗ này để hiển thị trọn vẹn ảnh */
+        /* Giữ trọn vẹn 100% ảnh banner không bị cắt xén */
         .banner-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Quan trọng: Giữ nguyên tỷ lệ ảnh, không cắt xén */
+            max-width: 100%;
+            max-height: 75vh; /* Giới hạn chiều cao ảnh để chừa không gian phía dưới cho nút */
+            object-fit: contain;
         }
 
-        /* 4 Nút Action đặt ngay dưới khu vực icon trên ảnh */
+        /* Đưa 4 nút bấm xuống hẳn vùng bên dưới ảnh, không lo bị che lấp */
         .action-box {
             position: absolute;
-            top: 58%; /* Chị chỉnh số này (ví dụ 56% hoặc 60%) để nút khớp chuẩn ngay dưới icon */
+            bottom: 30px; /* Cố định cách đáy màn hình 30px */
             left: 5%;
-            width: 45%;
+            width: 90%;
             z-index: 5;
         }
 
         .action-links { 
             display: grid; 
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 12px; 
+            grid-template-columns: repeat(4, 1fr); /* Xếp thành 1 hàng ngang gồm 4 nút cho đẹp */
+            gap: 15px; 
         }
 
         .btn-hub {
-            padding: 18px 10px;
+            padding: 16px 10px;
             background: #0056b3;
             color: white !important;
             text-decoration: none;
             border-radius: 6px;
-            font-size: 3.2em;
+            font-size: 2.8em;
             text-align: center;
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
              
         .btn-hub:hover { background: #004494; }
@@ -65,10 +65,10 @@ body, html {
 <body>
 
     <div class="banner-container">
-        <!-- Banner -->
+        <!-- Banner hiển thị trọn vẹn 100% -->
         <img src="Banner-ThanhBinh-Hub-3.png" alt="Thanh Binh Homepage Banner">
         
-        <!-- 4 Nút Action đã được đẩy xuống vị trí thấp hơn -->
+        <!-- 4 Nút Action nằm gọn gàng ở phía dưới banner, xếp thành 1 hàng ngang -->
         <div class="action-box">
             <div class="action-links">
                 <a href="geoscience.html" class="btn-hub">🔬 Geoscience</a>
