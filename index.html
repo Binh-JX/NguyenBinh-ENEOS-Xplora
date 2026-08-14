@@ -6,31 +6,19 @@
     <title>Nguyễn Thị Thanh Bình - Personal Knowledge Hub</title>
     
     <style>
-        body, html { 
+body, html { 
             margin: 0; padding: 0; height: 100%; width: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #000; /* Màu nền đen để tôn banner */
-        }
-        
-        /* Container chính chứa banner */
-        .banner-container {
-            position: relative;
-            width: 100%;
-            height: 100vh; /* Chiều cao bằng đúng màn hình */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            background-color: #fff;
         }
 
-        /* Đảm bảo ảnh hiển thị toàn bộ (không bị cắt) */
         .banner-container img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Quan trọng: Hiển thị trọn vẹn ảnh */
+            object-fit: cover;
         }
 
-        /* Thanh ngôn ngữ */
+              /* Thanh ngôn ngữ */
         .lang-switch {
             position: absolute;
             top: 25px; right: 50px;
