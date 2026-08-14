@@ -42,32 +42,51 @@
         }
         .lang-switch a { color: #fff; text-decoration: none; font-size: 2.2em; font-weight: 600; }
 
-        /* Hộp thông tin và Nút bấm */
+/* Hộp thông tin đã được tinh chỉnh lại khoảng cách */
         .overlay-box {
             position: absolute;
-            bottom: 40px; right: 40px;
-            width: 50%;
+            bottom: 30px; 
+            right: 30px;
+            width: 52%;
             background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
-            border-radius: 15px;
+            padding: 25px 30px;
+            border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .overlay-box h3 { color: #0056b3; margin: 0 0 10px 0; font-size: 4.0em; }
-        .overlay-box p { margin: 0 0 15px 0; font-size: 2.5em; color: #333; }
+        .overlay-box h3 { 
+            color: #0056b3; 
+            margin: 0 0 12px 0; 
+            font-size: 3.2em; 
+            line-height: 1.2;
+        }
+        
+        .overlay-box p { 
+            margin: 0 0 15px 0; 
+            font-size: 2.1em; 
+            color: #333; 
+            line-height: 1.4;
+        }
 
-        .action-links { display: flex; gap: 15px; margin-top: 20px; }
+        /* 4 nút bấm xếp thành lưới 2x2 để không bị co chữ */
+        .action-links { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 10px; 
+            margin-top: 15px; 
+        }
+
         .btn-hub {
-            flex: 1;
-            padding: 15px;
+            padding: 12px 10px;
             background: #0056b3;
             color: white !important;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 2.2em;
+            border-radius: 6px;
+            font-size: 2.0em;
             text-align: center;
             font-weight: bold;
         }
+             
         .btn-hub:hover { background: #004494; }
     </style>
 </head>
@@ -88,14 +107,19 @@
             <h3>Chân dung chuyên môn & Hoạt động</h3>
             <p><strong>Tiến sĩ Địa chất | Chuyên gia đổi mới công nghệ</strong></p>
             <p>Chào mừng bạn đến với không gian số cá nhân. Nơi chia sẻ hành trình chuyên môn, dự án âm nhạc giao lưu văn hóa và hoạt động cộng đồng.</p>
+
+            <div class="overlay-box">
+            <h3>Chân dung chuyên môn & Hoạt động</h3>
+            <p><strong>Tiến sĩ Địa chất | Chuyên gia đổi mới công nghệ</strong></p>
+            <p>Chào mừng đến với không gian số cá nhân. Nơi chia sẻ hành trình chuyên môn, dự án âm nhạc giao lưu văn hóa và hoạt động cộng đồng.</p>
             
             <div class="action-links">
                 <a href="geoscience.html" class="btn-hub">🔬 Geoscience</a>
-                <a href="innovation.html" class="btn-hub">🔬 Innovation</a>
+                <a href="innovation.html" class="btn-hub">💡 Innovation</a>
                 <a href="music.html" class="btn-hub">🎵 Music & MV</a>
-                <a href="video.html" class="btn-hub">🎵 Video </a>
+                <a href="video.html" class="btn-hub">🎬 Video Creation</a>
             </div>
-        </div>
+                </div>
     </div>
 
 </body>
