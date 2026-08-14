@@ -9,7 +9,7 @@
         body, html { 
             margin: 0; padding: 0; height: 100%; width: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fff; /* Nền trắng để liền mạch, mất hẳn viền đen */
+            background-color: #fff;
         }
         
         .banner-container {
@@ -22,25 +22,26 @@
             justify-content: center;
         }
 
-        /* Giữ trọn vẹn 100% ảnh banner không bị cắt xén */
+        /* Đổi max-width thành 100% để banner phóng rộng ra hết cỡ bề ngang màn hình */
         .banner-container img {
-            max-width: 100%;
-            max-height: 75vh; /* Giới hạn chiều cao ảnh để chừa không gian phía dưới cho nút */
+            width: 100%;
+            height: auto;
+            max-height: 78vh;
             object-fit: contain;
         }
 
-        /* Đưa 4 nút bấm xuống hẳn vùng bên dưới ảnh, không lo bị che lấp */
+        /* 4 Nút xếp ngang ở phía dưới */
         .action-box {
             position: absolute;
-            bottom: 30px; /* Cố định cách đáy màn hình 30px */
-            left: 5%;
-            width: 90%;
+            bottom: 25px;
+            left: 3%;
+            width: 94%;
             z-index: 5;
         }
 
         .action-links { 
             display: grid; 
-            grid-template-columns: repeat(4, 1fr); /* Xếp thành 1 hàng ngang gồm 4 nút cho đẹp */
+            grid-template-columns: repeat(4, 1fr); 
             gap: 15px; 
         }
 
@@ -65,10 +66,10 @@
 <body>
 
     <div class="banner-container">
-        <!-- Banner hiển thị trọn vẹn 100% -->
+        <!-- Banner rộng full màn hình -->
         <img src="Banner-ThanhBinh-Hub-3.png" alt="Thanh Binh Homepage Banner">
         
-        <!-- 4 Nút Action nằm gọn gàng ở phía dưới banner, xếp thành 1 hàng ngang -->
+        <!-- 4 Nút Action -->
         <div class="action-box">
             <div class="action-links">
                 <a href="geoscience.html" class="btn-hub">🔬 Geoscience</a>
