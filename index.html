@@ -6,10 +6,10 @@
     <title>Nguyễn Thị Thanh Bình - Personal Knowledge Hub</title>
     
     <style>
-        body, html { 
+body, html { 
             margin: 0; padding: 0; height: 100%; width: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #000;
+            background-color: #000; /* Nền đen để lót nếu màn hình có tỷ lệ khác ảnh */
         }
         
         .banner-container {
@@ -22,17 +22,17 @@
             overflow: hidden;
         }
 
-        /* Đã bỏ viền đen bằng object-fit: cover để ảnh tràn đầy màn hình */
+        /* Chỉnh chỗ này để hiển thị trọn vẹn ảnh */
         .banner-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* Quan trọng: Giữ nguyên tỷ lệ ảnh, không cắt xén */
         }
 
-        /* Đã đẩy 4 nút xuống thấp hơn (tăng top lên 68%) */
+        /* 4 Nút Action đặt ngay dưới khu vực icon trên ảnh */
         .action-box {
             position: absolute;
-            top: 68%; 
+            top: 58%; /* Chị chỉnh số này (ví dụ 56% hoặc 60%) để nút khớp chuẩn ngay dưới icon */
             left: 5%;
             width: 45%;
             z-index: 5;
