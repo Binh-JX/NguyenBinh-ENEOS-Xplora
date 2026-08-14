@@ -3,78 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nguyen Thi Thanh Binh - Personal Knowledge Hub</title>
+    <title>Thanh Binh Nguyen - Personal Knowledge Hub</title>
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://binh-jx.github.io/thanhbinh-hub/en.html#person",
-          "name": "Nguyen Thi Thanh Binh",
-          "jobTitle": "Geoscience PhD & Technology Innovator",
-          "worksFor": [
-            { "@type": "Organization", "name": "e-TEC Technology Innovation Center" },
-            { "@type": "Organization", "name": "ENEOS Xplora" },
-            { "@type": "Organization", "name": "Sunhouse" }
-          ],
-          "alumniOf": [
-            { "@type": "EducationalOrganization", "name": "Hanoi University of Mining and Geology" },
-            { "@type": "EducationalOrganization", "name": "University of Tokyo" },
-            { "@type": "EducationalOrganization", "name": "Durham University" }
-          ],
-          "knowsAbout": ["Geoscience", "Technology Innovation", "Project Management", "Cross-Cultural Music Creation", "Hospitality Management", "Community Leadership"],
-          "description": "Geoscience PhD and Technology Innovator, project manager at ENEOS & Sunhouse, hotel owner in Ha Long Bay, cross-cultural music creator, and community leader."
-        },
-        {
-          "@type": "Hotel",
-          "@id": "https://binh-jx.github.io/thanhbinh-hub/#hotel",
-          "name": "Sunhouse Beatique Hotel",
-          "description": "A charming boutique hotel located in Bai Chay.",
-          "founder": { "@id": "https://binh-jx.github.io/thanhbinh-hub/en.html#person" }
-        }
-      ]
-    }
-    </script>
-
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; background-color: #f4f6f8; }
-        .banner-wrapper { position: relative; width: 100%; margin: 0; padding: 0; line-height: 0; }
-        .banner-wrapper img { width: 100%; height: auto; display: block; }
+        body, html { 
+            margin: 0; padding: 0; height: 100%; width: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+        }
+        
+        .banner-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .banner-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Thanh ngôn ngữ góc phải trên */
         .lang-switch {
-            position: absolute; top: 25px; right: 35px; background: rgba(0, 0, 0, 0.7); 
-            padding: 12px 25px; border-radius: 30px; z-index: 9999; display: flex; align-items: center; gap: 15px; line-height: 1;
+            position: absolute;
+            top: 25px; right: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 12px 25px;
+            border-radius: 30px;
+            z-index: 10;
+            display: flex; gap: 15px;
         }
         .lang-switch a { color: #fff; text-decoration: none; font-size: 5.0em; font-weight: 600; }
-        .lang-switch a:hover { color: #ffdf6d; }
-        .lang-switch span { color: #aaa; font-size: 5.0em; }
-        .overlay-box {
-            position: absolute; bottom: 35px; right: 45px; width: 60%; max-width: 750px;
-            background: rgba(255, 255, 255, 0.92); padding: 35px 40px; border-radius: 12px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.35); text-align: left; line-height: 1.6;
+
+        /* Hộp 4 nút bấm ở BÊN TRÁI */
+        .action-box {
+            position: absolute;
+            bottom: 60px; 
+            left: 30px;
+            width: 38%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .overlay-box h3 { color: #0056b3; margin: 0 0 12px 0; font-size: 5.0em; }
-        .overlay-box p { margin: 0 0 15px 0; font-size: 3.5em; color: #222; }
-        .overlay-box p:last-child { margin-bottom: 0; }
-        .footer-update { max-width: 1500px; margin: 20px auto; padding: 0 25px; text-align: left; color: #666; font-size: 4.5em; font-style: italic; }
+
+        .action-links { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 10px; 
+        }
+
+        .btn-hub {
+            padding: 22px 10px;
+            background: #0056b3;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 3.5em;
+            text-align: center;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-hub:hover { background: #004494; }
+
+        /* Hộp giới thiệu ở BÊN PHẢI */
+        .overlay-box {
+            position: absolute;
+            bottom: 60px; 
+            right: 30px;
+            width: 52%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .overlay-box h3 { 
+            color: #0056b3; 
+            margin: 0 0 12px 0; 
+            font-size: 5.0em; 
+            line-height: 1.2;
+        }
+        
+        .overlay-box p { 
+            margin: 0 0 15px 0; 
+            font-size: 4.0em; 
+            color: #333; 
+            line-height: 1.4;
+        }
+
+        /* Dòng thông báo cập nhật phía dưới */
+        .update-footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 3.5em;
+            font-style: italic;
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
-    <div class="banner-wrapper">
+
+    <div class="banner-container">
+        <!-- Ngôn ngữ -->
         <div class="lang-switch">
-            <a href="index.html">VN</a> <span>|</span> 
-            <a href="en.html">EN</a> <span>|</span> 
-            <a href="jp.html">JP</a> <span>|</span> 
-            <a href="zh.html">CN</a>
+            <a href="index.html">VN</a> | <a href="en.html">EN</a> | 
+            <a href="jp.html">JP</a> | <a href="cn.html">CN</a>
         </div>
-        <img src="Banner-ThanhBinh-Hub.png" alt="Thanh Binh Homepage Banner">
+
+        <!-- Banner -->
+        <img src="Banner-ThanhBinh-Hub-3.png" alt="Thanh Binh Homepage Banner">
+        
+        <!-- 4 Nút Action ở BÊN TRÁI -->
+        <div class="action-box">
+            <div class="action-links">
+                <a href="geoscience-en.html" class="btn-hub">🔬 Geoscience</a>
+                <a href="innovation-en.html" class="btn-hub">💡 Innovation</a>
+                <a href="music-en.html" class="btn-hub">🎵 Music & MV</a>
+                <a href="video-en.html" class="btn-hub">🎬 Video Creation</a>
+            </div>
+        </div>
+
+        <!-- Hộp giới thiệu ở BÊN PHẢI -->
         <div class="overlay-box">
-            <h3>Professional Profile & Activities</h3>
-            <p><strong>Geoscience PhD | Technology Innovation Expert at e-TEC, ENEOS Xplora & Sunhouse</strong></p>
+            <h3>Professional Profile<br>& Activities</h3>
+            <p><strong>Geoscience PhD | Technology Innovation Expert at e-TEC, ENEOS Xplora </strong></p>
             <p>Welcome to my personal knowledge hub. A space dedicated to sharing my professional journey, cross-cultural musical projects between Vietnam and Japan, community leadership, and hospitality services in Ha Long Bay.</p>
         </div>
+
+        <!-- Dòng cập nhật dưới cùng -->
+        <div class="update-footer">
+            Latest Update: August 14, 2026
+        </div>
     </div>
-    <div class="footer-update">Latest Update: August 13, 2026</div>
+
 </body>
 </html>
