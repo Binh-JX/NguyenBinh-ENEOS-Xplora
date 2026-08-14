@@ -6,7 +6,7 @@
     <title>Thanh Binh Nguyen - Professional & Creative Hub</title>
     
     <!-- Google Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -17,43 +17,27 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #0b0f19;
             color: #f8fafc;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
-        /* --- BANNER ĐÃ THU GỌN VỪA VẶN --- */
+        /* --- BANNER PHỦ KÍN MÀN HÌNH HOÀN HẢO --- */
         .hero-banner {
             position: relative;
             width: 100%;
-            min-height: 750px; /* Thu gọn chiều cao cho cân đối */
+            height: 100vh; /* Phủ trọn màn hình, không bị khoảng trống đen bên dưới */
             background: url('Banner-ThanhBinh-Hub.png') no-repeat center center;
-            background-size: cover;
+            background-size: cover; /* Trải đều ảnh khít màn hình */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 20px 40px;
+            padding: 30px 50px;
         }
 
-        /* Lớp phủ tối nhẹ nghệ thuật */
-        .hero-banner::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(11, 15, 25, 0.4) 0%, rgba(11, 15, 25, 0.1) 100%);
-            z-index: 1;
-        }
-
-        .hero-top, .hero-content, .hero-footer-bar {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Thanh ngôn ngữ góc phải */
+        /* Thanh ngôn ngữ góc phải trên cùng */
         .hero-top {
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            z-index: 2;
         }
         .lang-switch {
             background: rgba(11, 15, 25, 0.7);
@@ -71,7 +55,7 @@
             cursor: pointer;
         }
 
-        /* Nội dung chính thu gọn 10% */
+        /* Phần dưới của banner chứa Icon điều hướng và Khung chuyên môn */
         .hero-content {
             display: flex;
             justify-content: space-between;
@@ -79,26 +63,10 @@
             flex-wrap: wrap;
             gap: 20px;
             margin-bottom: 20px;
+            z-index: 2;
         }
 
-        .hero-text h2 {
-            color: #ffffff;
-            font-size: 1.3rem;
-            font-weight: 300;
-            margin: 0 0 5px 0;
-            letter-spacing: 2px;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.8);
-        }
-
-        .hero-text h1 {
-            font-family: 'Playfair Display', serif;
-            color: #ffffff;
-            font-size: 2.6rem;
-            margin: 0 0 25px 0;
-            text-shadow: 0 3px 10px rgba(0,0,0,0.8);
-        }
-
-        /* Hàng Icon điều hướng gọn gàng */
+        /* Hàng Icon điều hướng (nằm ở khoảng trống góc trái dưới banner) */
         .icon-nav-bar {
             display: flex;
             gap: 20px;
@@ -117,15 +85,15 @@
         }
 
         .icon-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             color: #38bdf8;
         }
 
         .icon-circle {
-            width: 50px;
-            height: 50px;
-            background: rgba(11, 15, 25, 0.75);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            width: 52px;
+            height: 52px;
+            background: rgba(11, 15, 25, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.35);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -133,7 +101,7 @@
             font-size: 20px;
             margin-bottom: 6px;
             backdrop-filter: blur(6px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             transition: border-color 0.3s, background 0.3s;
         }
 
@@ -146,42 +114,32 @@
             font-size: 11px;
             font-weight: 600;
             letter-spacing: 0.5px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.9);
         }
 
-        /* Khung Chân dung chuyên môn bên phải gọn gàng */
+        /* Khung Chân dung chuyên môn đặt đúng góc phải */
         .profile-card {
             background: rgba(255, 255, 255, 0.95);
             padding: 20px;
             border-radius: 12px;
-            max-width: 310px;
+            max-width: 320px;
             color: #1e293b;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             border-left: 4px solid #38bdf8;
             backdrop-filter: blur(8px);
         }
 
         .profile-card h3 {
-            font-size: 1rem;
+            font-size: 2.5rem;
             margin: 0 0 8px 0;
             color: #0f172a;
         }
 
         .profile-card p {
-            font-size: 0.85rem;
+            font-size: 2.5rem;
             line-height: 1.5;
             color: #475569;
             margin: 0;
-        }
-
-        /* Thanh cập nhật dưới cùng */
-        .update-bar {
-            text-align: center;
-            padding: 12px;
-            background-color: rgba(11, 15, 25, 0.9);
-            color: #94a3b8;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
         }
     </style>
 </head>
@@ -195,35 +153,31 @@
             <div class="lang-switch">VN | <span>EN</span> | JP | CN</div>
         </div>
 
-        <!-- Nội dung và các Icon điều hướng -->
+        <!-- Các Icon điều hướng và Khung chuyên môn -->
         <div class="hero-content">
-            <div class="hero-text">
-                <h2>WELCOME TO MY HOMEPAGE</h2>
-                <h1>THANH BINH NGUYEN</h1>
-
-                <!-- CÁC ICON ĐIỀU HƯỚNG TRANG CHUYÊN ĐỀ -->
-                <div class="icon-nav-bar">
-                    <a href="geoscience.html" class="icon-item">
-                        <div class="icon-circle"><i class="fa-solid fa-flask"></i></div>
-                        <span>GEOSCIENCE</span>
-                    </a>
-                    <a href="innovation.html" class="icon-item">
-                        <div class="icon-circle"><i class="fa-solid fa-lightbulb"></i></div>
-                        <span>INNOVATION</span>
-                    </a>
-                    <a href="music.html" class="icon-item">
-                        <div class="icon-circle"><i class="fa-solid fa-music"></i></div>
-                        <span>MUSIC</span>
-                    </a>
-                    <a href="hospitality.html" class="icon-item">
-                        <div class="icon-circle"><i class="fa-solid fa-hotel"></i></div>
-                        <span>HOSPITALITY</span>
-                    </a>
-                    <a href="video.html" class="icon-item">
-                        <div class="icon-circle"><i class="fa-solid fa-video"></i></div>
-                        <span>VIDEO CREATION</span>
-                    </a>
-                </div>
+            
+            <!-- CÁC ICON ĐIỀU HƯỚNG -->
+            <div class="icon-nav-bar">
+                <a href="geoscience.html" class="icon-item">
+                    <div class="icon-circle"><i class="fa-solid fa-flask"></i></div>
+                    <span>GEOSCIENCE</span>
+                </a>
+                <a href="innovation.html" class="icon-item">
+                    <div class="icon-circle"><i class="fa-solid fa-lightbulb"></i></div>
+                    <span>INNOVATION</span>
+                </a>
+                <a href="music.html" class="icon-item">
+                    <div class="icon-circle"><i class="fa-solid fa-music"></i></div>
+                    <span>MUSIC</span>
+                </a>
+                <a href="hospitality.html" class="icon-item">
+                    <div class="icon-circle"><i class="fa-solid fa-hotel"></i></div>
+                    <span>HOSPITALITY</span>
+                </a>
+                <a href="video.html" class="icon-item">
+                    <div class="icon-circle"><i class="fa-solid fa-video"></i></div>
+                    <span>VIDEO CREATION</span>
+                </a>
             </div>
 
             <!-- Khung Chân dung chuyên môn bên phải -->
@@ -233,12 +187,6 @@
             </div>
         </div>
 
-        <div class="hero-footer-bar"></div>
-    </div>
-
-    <!-- Thanh cập nhật ngày tháng dưới cùng -->
-    <div class="update-bar">
-        Cập nhật mới nhất: 14/Tháng 8/2026
     </div>
 
 </body>
