@@ -42,7 +42,39 @@
         }
         .lang-switch a { color: #fff; text-decoration: none; font-size: 5.0em; font-weight: 600; }
 
-/* Hộp thông tin đã được tinh chỉnh lại khoảng cách */
+        /* Hộp 4 nút bấm ở BÊN TRÁI */
+        .action-box {
+            position: absolute;
+            bottom: 30px; 
+            left: 30px;
+            width: 38%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* 4 nút bấm xếp thành lưới 2x2 */
+        .action-links { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 10px; 
+        }
+
+        .btn-hub {
+            padding: 12px 10px;
+            background: #0056b3;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 3.5em;
+            text-align: center;
+            font-weight: bold;
+        }
+             
+        .btn-hub:hover { background: #004494; }
+
+        /* Hộp giới thiệu ở BÊN PHẢI */
         .overlay-box {
             position: absolute;
             bottom: 30px; 
@@ -63,31 +95,10 @@
         
         .overlay-box p { 
             margin: 0 0 15px 0; 
-            font-size: 5.0em; 
+            font-size: 4.0em; 
             color: #333; 
             line-height: 1.4;
         }
-
-        /* 4 nút bấm xếp thành lưới 2x2 để không bị co chữ */
-        .action-links { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 10px; 
-            margin-top: 15px; 
-        }
-
-        .btn-hub {
-            padding: 12px 10px;
-            background: #0056b3;
-            color: white !important;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 4.0em;
-            text-align: center;
-            font-weight: bold;
-        }
-             
-        .btn-hub:hover { background: #004494; }
     </style>
 </head>
 <body>
@@ -102,20 +113,22 @@
         <!-- Banner trọn vẹn -->
         <img src="Banner-ThanhBinh-Hub-3.png" alt="Thanh Binh Homepage Banner">
         
-        <!-- Nội dung và Nút bấm -->
-               
-            <div class="overlay-box">
-            <h3>Chân dung chuyên môn & Hoạt động</h3>
-            <p><strong>Tiến sĩ Địa chất | Chuyên gia đổi mới công nghệ</strong></p>
-            <p>Chào mừng đến với không gian số cá nhân. Nơi chia sẻ hành trình chuyên môn, dự án âm nhạc giao lưu văn hóa và hoạt động cộng đồng.</p>
-            
+        <!-- 4 Nút Action ở BÊN TRÁI -->
+        <div class="action-box">
             <div class="action-links">
                 <a href="geoscience.html" class="btn-hub">🔬 Geoscience</a>
                 <a href="innovation.html" class="btn-hub">💡 Innovation</a>
                 <a href="music.html" class="btn-hub">🎵 Music & MV</a>
                 <a href="video.html" class="btn-hub">🎬 Video Creation</a>
             </div>
-                </div>
+        </div>
+
+        <!-- Hộp giới thiệu ở BÊN PHẢI -->
+        <div class="overlay-box">
+            <h3>Chân dung chuyên môn & Hoạt động</h3>
+            <p><strong>Tiến sĩ Địa chất | Chuyên gia đổi mới công nghệ</strong></p>
+            <p>Chào mừng đến với không gian số cá nhân. Nơi chia sẻ hành trình chuyên môn, dự án âm nhạc giao lưu văn hóa và hoạt động cộng đồng.</p>
+        </div>
     </div>
 
 </body>
