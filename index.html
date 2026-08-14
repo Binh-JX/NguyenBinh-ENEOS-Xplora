@@ -21,17 +21,19 @@
 
         /* --- BANNER PHỦ KÍN MÀN HÌNH HOÀN HẢO --- */
         .hero-banner {
-            position: relative;
-            width: 100%;
-            height: 100vh; /* Phủ trọn màn hình, không bị khoảng trống đen bên dưới */
-            background: url('Banner-ThanhBinh-Hub.png') no-repeat center center;
-            background-size: 100% 100%; /* Trải đều ảnh khít màn hình */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 30px 50px;
-        }
-
+    position: relative;
+    width: 100%;
+    /* Xóa dòng height hoặc 100vh đi, thay bằng dòng dưới: */
+    aspect-ratio: 16 / 5; /* Tự động tính chiều cao theo chuẩn tỷ lệ ngang của ảnh banner */
+    background: url('Banner-ThanhBinh-Hub.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 40px;
+}
+           
+     
         /* Thanh ngôn ngữ góc phải trên cùng */
         .hero-top {
             display: flex;
