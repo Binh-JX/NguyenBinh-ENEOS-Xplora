@@ -22,16 +22,17 @@
             overflow: hidden;
         }
 
+        /* Đã bỏ viền đen bằng object-fit: cover để ảnh tràn đầy màn hình */
         .banner-container img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
         }
 
-        /* 4 Nút Action đặt ngay dưới khu vực icon */
+        /* Đã đẩy 4 nút xuống thấp hơn (tăng top lên 68%) */
         .action-box {
             position: absolute;
-            top: 55%;
+            top: 68%; 
             left: 5%;
             width: 45%;
             z-index: 5;
@@ -64,10 +65,10 @@
 <body>
 
     <div class="banner-container">
-        <!-- Banner trọn vẹn -->
+        <!-- Banner -->
         <img src="Banner-ThanhBinh-Hub-3.png" alt="Thanh Binh Homepage Banner">
         
-        <!-- 4 Nút Action -->
+        <!-- 4 Nút Action đã được đẩy xuống vị trí thấp hơn -->
         <div class="action-box">
             <div class="action-links">
                 <a href="geoscience.html" class="btn-hub">🔬 Geoscience</a>
