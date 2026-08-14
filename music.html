@@ -3,182 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thanh Binh Nguyen - Music Hub</title>
-    
-    <!-- Đoạn JSON-LD AI-Ready Schema cho Kênh Âm Nhạc -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MusicGroup",
-      "name": "Thanh Binh Nguyen Music Channel",
-      "url": "https://www.youtube.com/@ThanhBinhNguyen-kg7xr",
-      "sameAs": [
-        "https://www.youtube.com/@ThanhBinhNguyen-kg7xr"
-      ],
-      "genre": "Vocal / Instrumental / Personal Collection",
-      "description": "Kênh YouTube chính thức chia sẻ các tác phẩm âm nhạc và kỷ niệm của Nguyễn Thị Thanh Bình."
-    }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Music & MV - Nguyễn Thị Thanh Bình</title>
     
     <style>
-        * { box-sizing: border-box; }
-        body {
-            background-color: #0b0f19;
-            color: #f8fafc;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            justify-content: space-between;
+        body, html { 
+            margin: 0; padding: 0; height: 100%; width: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #fff;
         }
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 40px;
-        }
+
+        /* Nút về trang chủ góc trái */
         .back-home {
-            color: #38bdf8;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            color: #fff;
             text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: opacity 0.2s;
+            font-weight: bold;
+            font-size: 1.1em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+            z-index: 10;
         }
-        .back-home:hover {
-            opacity: 0.8;
-        }
-        .lang-switch {
-            font-size: 14px;
-            color: #94a3b8;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-        .lang-switch span {
-            color: #38bdf8;
-            cursor: pointer;
-        }
-        header {
-            padding: 10px 20px 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 42px;
-            margin: 0 0 10px 0;
-            color: #f8fafc;
-            letter-spacing: 1px;
-        }
-        header p {
-            color: #94a3b8;
-            font-size: 16px;
-            margin: 0;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            width: 100%;
-        }
-        .music-card {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 16px;
-            padding: 50px 40px;
+        .back-home:hover { background: rgba(255, 255, 255, 0.3); }
+
+        .music-container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        .music-header {
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            transition: all 0.3s ease;
+            margin-bottom: 30px;
         }
-        .music-card:hover {
-            border-color: #38bdf8;
-            transform: translateY(-3px);
+
+        .music-header h1 {
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+            color: #4da6ff;
         }
-        .music-icon {
-            font-size: 65px;
-            color: #ff0000;
-            margin-bottom: 25px;
+
+        .music-header p {
+            font-size: 1.2em;
+            color: #aaa;
+            margin: 0;
         }
-        .music-card h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            margin: 0 0 15px 0;
-            color: #f8fafc;
-        }
-        .music-card p {
-            color: #94a3b8;
-            font-size: 16px;
-            line-height: 1.6;
-            margin: 0 0 35px 0;
-            max-width: 650px;
-        }
-        .btn-youtube {
-            background-color: #ff0000;
-            color: #ffffff;
-            padding: 14px 34px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            transition: background-color 0.2s, transform 0.2s;
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
-        }
-        .btn-youtube:hover {
-            background-color: #e60000;
-            transform: scale(1.02);
-        }
-        footer {
-            text-align: center;
+
+        /* Khung chứa nội dung YouTube nổi bật và rộng rãi hơn */
+        .youtube-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 30px;
-            color: #64748b;
-            font-size: 13px;
-            border-top: 1px solid #1e293b;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .youtube-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .youtube-card p {
+            color: #ccc;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .btn-youtube {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #ff0000;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 4px 15px rgba(255,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        .btn-youtube:hover {
+            background: #cc0000;
         }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Trang chủ / Home</a>
-        <div class="lang-switch"><span>VN</span> | EN</div>
-    </div>
+    <a href="index.html" class="back-home">← Trang chủ</a>
 
-    <header>
-        <h1>Music Hub</h1>
-        <p>Không gian âm nhạc & Kỷ niệm của Thanh Bình</p>
-    </header>
+    <div class="music-container">
+        <div class="music-header">
+            <h1>🎵 Music & MV Hub</h1>
+            <p>Không gian âm nhạc, các dự án ca khúc và giao lưu văn hóa</p>
+        </div>
 
-    <div class="container">
-        <div class="music-card">
-            <div class="music-icon">
-                <i class="fa-brands fa-youtube"></i>
-            </div>
-            <h2>Thanh Bình Nguyễn Channel</h2>
-            <p>Chào mừng bạn đến với góc âm nhạc cá nhân. Nơi tổng hợp các video tuyển chọn, giai điệu yêu thích và những khoảnh khắc đáng nhớ qua từng khung hình.</p>
-            
-            <a href="https://www.youtube.com/@ThanhBinhNguyen-kg7xr" target="_blank" class="btn-youtube">
-                <i class="fa-solid fa-play"></i> Khám phá Kênh YouTube (23 Videos)
-            </a>
+        <div class="youtube-card">
+            <h3>Thanh Binh Nguyen Channel</h3>
+            <p>Thưởng thức các bản cover âm nhạc, các sản phẩm video kết hợp nghệ thuật và cảm xúc.</p>
+            <a href="https://www.youtube.com/@thanhbinhnguyen..." target="_blank" class="btn-youtube">Khám phá Kênh YouTube</a>
         </div>
     </div>
-
-    <footer>
-        &copy; 2026 Thanh Binh Nguyen Hub. All rights reserved.
-    </footer>
 
 </body>
 </html>
