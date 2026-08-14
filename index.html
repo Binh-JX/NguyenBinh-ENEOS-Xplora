@@ -1,7 +1,15 @@
-body, html { 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thị Thanh Bình - Personal Knowledge Hub</title>
+    
+    <style>
+        body, html { 
             margin: 0; padding: 0; height: 100%; width: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #000; /* Đổi nền thành đen để lót nếu màn hình rộng hơn tỷ lệ ảnh */
+            background-color: #000;
         }
         
         .banner-container {
@@ -17,13 +25,13 @@ body, html {
         .banner-container img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Quan trọng: Giúp hiển thị trọn vẹn toàn bộ ảnh banner */
+            object-fit: contain;
         }
 
         /* 4 Nút Action đặt ngay dưới khu vực icon */
         .action-box {
             position: absolute;
-            top: 55%; /* Chị có thể chỉnh số này (ví dụ 53% hoặc 57%) để dịch lên/xuống chuẩn sát icon */
+            top: 55%;
             left: 5%;
             width: 45%;
             z-index: 5;
@@ -51,3 +59,24 @@ body, html {
         }
              
         .btn-hub:hover { background: #004494; }
+    </style>
+</head>
+<body>
+
+    <div class="banner-container">
+        <!-- Banner trọn vẹn -->
+        <img src="Banner-ThanhBinh-Hub-3.png" alt="Thanh Binh Homepage Banner">
+        
+        <!-- 4 Nút Action -->
+        <div class="action-box">
+            <div class="action-links">
+                <a href="geoscience.html" class="btn-hub">🔬 Geoscience</a>
+                <a href="innovation.html" class="btn-hub">💡 Innovation</a>
+                <a href="music.html" class="btn-hub">🎵 Music & MV</a>
+                <a href="video.html" class="btn-hub">🎬 Video Creation</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
