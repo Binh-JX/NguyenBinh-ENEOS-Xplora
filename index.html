@@ -3,85 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thanh Binh Nguyen | Professional & Creative Hub</title>
+    <title>Thanh Binh Nguyen - Professional & Creative Hub</title>
     
     <!-- Google Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
         * { box-sizing: border-box; }
         body {
-            background-color: #0b0f19;
-            color: #f8fafc;
-            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
-        .top-bar { padding: 25px 40px; text-align: right; color: #94a3b8; font-weight: 600; }
-        .top-bar span { color: #38bdf8; cursor: pointer; }
-        
-        header { padding: 40px 20px; text-align: center; }
-        header h1 { font-family: 'Playfair Display', serif; font-size: 48px; margin: 0 0 10px 0; color: #f8fafc; }
-        header p { color: #94a3b8; font-size: 18px; }
 
-        /* Grid Layout cho các Hub */
-        .hub-grid {
-            max-width: 1000px;
-            margin: 40px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            padding: 20px;
+        /* --- PHẦN BANNER CHÍNH (GIỮ NGUYÊN BẢN ĐẸP) --- */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            min-height: 520px;
+            background: url('YOUR_BANNER_IMAGE_URL_OR_FILENAME') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 25px 50px;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.4);
         }
-        .hub-item {
-            background-color: #1e293b;
-            padding: 30px;
-            border-radius: 16px;
+
+        /* Lớp phủ tối nhẹ để làm nổi bật chữ trên nền ảnh */
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 100%);
+            z-index: 1;
+        }
+
+        .hero-top, .hero-content, .hero-footer-bar {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Thanh trên cùng: Nút chuyển ngôn ngữ */
+        .hero-top {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .lang-switch {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 8px 16px;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .lang-switch span {
+            color: #38bdf8;
+            cursor: pointer;
+        }
+
+        /* Nội dung giữa banner */
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .hero-text h2 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
+            font-size: 3.5rem;
+            margin: 0 0 30px 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* Hàng Icon tương tác (Đã gắn link chuyển trang) */
+        .icon-nav-bar {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .icon-item {
             text-align: center;
-            border: 1px solid #334155;
-            transition: all 0.3s;
             text-decoration: none;
-            color: #f8fafc;
+            color: #ffffff;
+            transition: transform 0.3s, color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .hub-item:hover { border-color: #38bdf8; transform: translateY(-5px); background-color: #2d3748; }
-        .hub-item i { font-size: 40px; color: #38bdf8; margin-bottom: 15px; }
-        .hub-item h3 { font-size: 16px; margin: 0; }
 
-        footer { text-align: center; padding: 30px; color: #64748b; font-size: 13px; margin-top: auto; }
+        .icon-item:hover {
+            transform: translateY(-5px);
+            color: #38bdf8;
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background: rgba(15, 23, 42, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 8px;
+            backdrop-filter: blur: 5px;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .icon-item:hover .icon-circle {
+            border-color: #38bdf8;
+            background: rgba(56, 189, 248, 0.2);
+        }
+
+        .icon-item span {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Khung chân dung chuyên môn bên phải */
+        .profile-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 340px;
+            color: #1e293b;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-left: 4px solid #38bdf8;
+        }
+
+        .profile-card h3 {
+            font-size: 1.1rem;
+            margin: 0 0 10px 0;
+            color: #0f172a;
+        }
+
+        .profile-card p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #475569;
+            margin: 0;
+        }
+
+        /* Phần chân trang cập nhật ngày tháng */
+        .update-bar {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #64748b;
+            font-size: 0.95rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: auto;
+        }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">VN | EN | JP | CN</div>
+    <!-- BANNER CHÍNH THỨC -->
+    <div class="hero-banner">
+        
+        <!-- Thanh ngôn ngữ góc phải -->
+        <div class="hero-top">
+            <div class="lang-switch">VN | EN | JP | CN</div>
+        </div>
 
-    <header>
-        <h1>Thanh Binh Nguyen</h1>
-        <p>Chuyên gia Địa chất | Đổi mới Công nghệ | Nghệ thuật & Cộng đồng</p>
-    </header>
+        <!-- Nội dung và các Icon điều hướng -->
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>WELCOME TO MY HOMEPAGE</h2>
+                <h1>THANH BINH NGUYEN</h1>
 
-    <div class="hub-grid">
-        <a href="geoscience.html" class="hub-item">
-            <i class="fa-solid fa-flask"></i><h3>Geoscience</h3>
-        </a>
-        <a href="innovation.html" class="hub-item">
-            <i class="fa-solid fa-lightbulb"></i><h3>Innovation</h3>
-        </a>
-        <a href="music.html" class="hub-item">
-            <i class="fa-solid fa-music"></i><h3>Music</h3>
-        </a>
-        <a href="hospitality.html" class="hub-item">
-            <i class="fa-solid fa-hotel"></i><h3>Hospitality</h3>
-        </a>
-        <a href="video.html" class="hub-item">
-            <i class="fa-solid fa-video"></i><h3>Video Creation</h3>
-        </a>
+                <!-- CÁC ICON ĐIỀU HƯỚNG TRANG CHUYÊN ĐỀ -->
+                <div class="icon-nav-bar">
+                    <a href="geoscience.html" class="icon-item">
+                        <div class="icon-circle"><i class="fa-solid fa-flask"></i></div>
+                        <span>GEOSCIENCE</span>
+                    </a>
+                    <a href="innovation.html" class="icon-item">
+                        <div class="icon-circle"><i class="fa-solid fa-lightbulb"></i></div>
+                        <span>INNOVATION</span>
+                    </a>
+                    <a href="music.html" class="icon-item">
+                        <div class="icon-circle"><i class="fa-solid fa-music"></i></div>
+                        <span>MUSIC</span>
+                    </a>
+                    <a href="hospitality.html" class="icon-item">
+                        <div class="icon-circle"><i class="fa-solid fa-hotel"></i></div>
+                        <span>HOSPITALITY</span>
+                    </a>
+                    <a href="video.html" class="icon-item">
+                        <div class="icon-circle"><i class="fa-solid fa-video"></i></div>
+                        <span>VIDEO CREATION</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Khung Chân dung chuyên môn bên phải -->
+            <div class="profile-card">
+                <h3>Chân dung chuyên môn & Hoạt động</h3>
+                <p><strong>Tiến sĩ Địa chất | Chuyên gia đổi mới công nghệ</strong> tại e-TEC, ENEOS Xplora & Sunhouse.<br>Chào mừng bạn đến với không gian số cá nhân. Nơi chia sẻ hành trình chuyên môn, các dự án âm nhạc giao lưu văn hóa Việt - Nhật và dịch vụ lưu trú tại Hạ Long.</p>
+            </div>
+        </div>
+
+        <div class="hero-footer-bar"></div>
     </div>
 
-    <footer>&copy; 2026 Thanh Binh Nguyen Hub.</footer>
+    <!-- Thanh cập nhật ngày tháng dưới cùng -->
+    <div class="update-bar">
+        Cập nhật mới nhất: 14/Tháng 8/2026
+    </div>
 
 </body>
 </html>
