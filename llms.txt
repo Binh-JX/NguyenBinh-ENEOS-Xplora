@@ -1,0 +1,17 @@
+# Thanh Bình Nguyễn — Personal Hub
+
+> Personal site of Nguyễn Thị Thanh Bình (Thanh Bình) — geoscientist & subsurface engineer, innovation practitioner, musician, and video creator. A cinematic, multi-world personal hub documenting how ideas begin and take shape, across engineering, innovation, and music.
+
+## Pages
+- [Home](https://binh-jx.github.io/thanhbinh-hub/index.html): Entry cinematic and overview, with links into every world on the site.
+- [Innovation Journey](https://binh-jx.github.io/thanhbinh-hub/innovation.html): A gallery of how ideas begin — geopressure energy recovery, self-healing materials, and biomass-derived critical minerals.
+- [Music & MV World](https://binh-jx.github.io/thanhbinh-hub/music.html): Music and music-video work.
+
+## Profiles
+- [GitHub](https://github.com/Binh-JX)
+- [YouTube](https://www.youtube.com/@ThanhBinhNguyen-kg7xr)
+- [ResearchGate](https://www.researchgate.net/profile/Nguyen-Binh-24)
+- [ORCID](https://orcid.org/0009-0007-7727-990X)
+
+## Notes
+- More worlds (Geoscience, Video Creation) are planned but not yet published; this file will be updated once they go live.

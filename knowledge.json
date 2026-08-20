@@ -1,0 +1,119 @@
+{
+  "_readme": "This is the SOURCE OF TRUTH for site-wide content and SEO/AI entity data — not fetched by any page at runtime (the site is opened as a local file:// page during review, and browsers block fetch() of local JSON under file://). Edit this file first, then copy the relevant fields into the matching <script type='application/ld+json'> block inside each hub's HTML <head>. Keep the two in sync by hand.",
+  "person": {
+    "name": "Nguyễn Thị Thanh Bình",
+    "alternateName": "Thanh Bình",
+    "jobTitle": [
+      "Geoscientist & Subsurface Engineer",
+      "Open Innovation Practitioner",
+      "Musician",
+      "Video Creator"
+    ],
+    "knowsAbout": [
+      "Open Innovation",
+      "Subsurface Engineering",
+      "CCUS",
+      "Artificial Intelligence",
+      "Music Production",
+      "Video Storytelling"
+    ],
+    "bio": "A multidisciplinary practitioner who brings the same systems thinking from subsurface engineering into open innovation, and the same care for storytelling into music and video — technical rigor and creative expression treated as one continuous practice, not two separate lives.",
+    "url": "index.html"
+  },
+  "site": {
+    "name": "Thanh Bình Nguyễn Hub",
+    "url": "index.html",
+    "repo": "Binh-JX/thanhbinh-hub"
+  },
+  "hubs": {
+    "geoscience": {
+      "status": "not_built",
+      "about": "Subsurface Technology & CCUS",
+      "h1": "Thanh Bình | Geoscience & Subsurface Engineering",
+      "url": "geoscience.html",
+      "description": "PENDING — write once the Geoscience Hub content and structure are approved. Should describe subsurface engineering and CCUS work using the same entity-first language as the other three hubs."
+    },
+    "innovation": {
+      "status": "built",
+      "about": "Open Innovation & AI",
+      "h1": "Thanh Bình | Innovation & Open Innovation Engineering",
+      "url": "innovation.html",
+      "description": "Thanh Bình's Innovation world: original engineering frameworks, community co-creation from KAOS workshops, and curated global inspirations.",
+      "sources": {
+        "original": {
+          "label": "Original Ideas",
+          "eyebrow": "THANH BÌNH'S CORE",
+          "description": "Original frameworks and engineering insight — sharp and grounded."
+        },
+        "workshop": {
+          "label": "Workshop Concepts",
+          "eyebrow": "CO-CREATION",
+          "description": "Community-driven ideas and graphic recordings, built with others."
+        },
+        "curated": {
+          "label": "Curated Inspirations",
+          "eyebrow": "GLOBAL / EXTERNAL",
+          "description": "External philosophies and trends that inspire the work."
+        }
+      },
+      "ideas": {
+        "original": [
+          {
+            "id": "original-placeholder",
+            "title": "First Original Idea",
+            "summary": null,
+            "reflection": null
+          }
+        ],
+        "workshop": [
+          {
+            "id": "workshop-ecity",
+            "title": "e-City",
+            "summary": null,
+            "reflection": null
+          },
+          {
+            "id": "workshop-zero-base",
+            "title": "Zero-Base Experiments",
+            "summary": null,
+            "reflection": null
+          }
+        ],
+        "curated": [
+          {
+            "id": "curated-placeholder",
+            "title": "First Curated Inspiration",
+            "summary": null,
+            "reflection": null
+          }
+        ]
+      }
+    },
+    "music": {
+      "status": "built",
+      "locked": true,
+      "about": "Music Performance & Music Video Storytelling",
+      "h1_note": "Visible H1 on the live page is styled as 'MUSIC & MV' (locked, unchanged). The fuller keyword-rich name below is carried in JSON-LD only, not shown on screen.",
+      "h1": "Thanh Bình | Music & MV — Cover Performance and Original Songwriting",
+      "url": "music.html",
+      "description": "Thanh Bình's Music & MV world: Vietnamese–Japanese cover performances, original songwriting in production, and the music videos that carry them.",
+      "youtubeChannel": "https://www.youtube.com/@ThanhBinhNguyen-kg7xr"
+    },
+    "video": {
+      "status": "built",
+      "locked": true,
+      "about": "Personal Video Creation & Storytelling",
+      "h1_note": "Visible H1 on the live page is styled as 'VIDEO CREATION' (locked, unchanged). The fuller keyword-rich name below is carried in JSON-LD only, not shown on screen.",
+      "h1": "Thanh Bình | Video Creation — Personal Storytelling on Film",
+      "url": "video.html",
+      "description": "Thanh Bình's Video Creation world: class reunions, alumni gatherings, travel stories, and family birthdays kept and told again on video.",
+      "youtubeChannel": "https://www.youtube.com/@ThanhBinhNguyen-kg7xr",
+      "categories": [
+        "Họp Lớp (Class Reunions)",
+        "Hội Khóa (Alumni Gatherings)",
+        "Du Lịch (Travel Stories)",
+        "Sinh Nhật Gia Đình (Family Birthdays)"
+      ]
+    }
+  }
+}
