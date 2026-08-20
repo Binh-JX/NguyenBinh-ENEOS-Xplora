@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music & MV — Nguyễn Thị Thanh Bình</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="music-world.css">
+
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; background: #0a0709; }
+    </style>
+</head>
+<body>
+
+    <div class="mw-grain" aria-hidden="true"></div>
+
+    <!-- =====================================================
+         HUB SWITCHER — jump to any other World or back to the
+         opening cinematic (section-01). Same component/pattern as
+         Innovation/Geoscience World's hubnav, recoloured to this
+         World's gold identity via CSS variables already scoped
+         under #music-world.
+    ===================================================== -->
+    <nav class="mw-hubnav" data-hubnav aria-label="Switch world">
+        <button type="button" class="mw-hubnav-trigger" data-hubnav-trigger aria-expanded="false" aria-controls="mw-hubnav-menu">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M8 4.5v3.5l2.4 1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Worlds</span>
+        </button>
+        <div class="mw-hubnav-menu" id="mw-hubnav-menu" data-hubnav-menu hidden>
+            <a href="index.html#section-01" class="mw-hubnav-link mw-hubnav-home">
+                <svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M13 7L8 3 3 7M4.5 6.5V13h7V6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back to the Beginning
+            </a>
+            <a href="geoscience.html" class="mw-hubnav-link">Geoscience</a>
+            <a href="innovation.html" class="mw-hubnav-link">Innovation</a>
+            <a href="music.html" class="mw-hubnav-link is-current" aria-current="page">Music &amp; MV</a>
+            <a href="video.html" class="mw-hubnav-link">Video Creation</a>
+        </div>
+    </nav>
+
+    <main id="music-world" aria-label="Music and MV World">
+
+        <!-- SCENE 01 — INTRO -->
+        <section class="mw-scene mw-scene-full mw-intro" aria-label="Music and MV world introduction">
+            <div class="mw-intro-banner">
+                <img src="music-banner.jpg" alt="" class="mw-intro-banner-img">
+            </div>
+            <div class="mw-horizon" aria-hidden="true"></div>
+            <div class="mw-intro-bottom">
+                <div class="mw-intro-text">
+                    <p class="mw-intro-eyebrow mw-mono" data-reveal>ENTER THE MUSIC WORLD</p>
+                    <h1 class="mw-intro-title" data-reveal>MUSIC &amp; MV</h1>
+                    <p class="mw-intro-tagline" data-reveal>Stories told through sound, image and emotion.</p>
+                </div>
+                <nav class="mw-intro-tabs" aria-label="Jump to a section">
+                    <a href="#mw-covers" class="mw-intro-tab is-active" data-intro-tab>Cover Songs</a>
+                    <a href="#mw-originals" class="mw-intro-tab" data-intro-tab>Original Songs</a>
+                </nav>
+            </div>
+        </section>
+
+        <!-- SCENE 02 — FEATURED MV -->
+        <section class="mw-scene mw-scene-full mw-featured" id="mw-covers" aria-label="Featured music video">
+            <div class="mw-featured-visual" data-mv-visual aria-hidden="true">
+                <img class="mw-featured-visual-img" data-mv-visual-img alt="" hidden>
+            </div>
+            <div class="mw-horizon" aria-hidden="true"></div>
+
+            <a class="mw-featured-link" data-mv-link href="#" data-reveal>
+                <div class="mw-play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"/></svg>
+                </div>
+
+                <p class="mw-featured-eyebrow mw-mono">FEATURED MV</p>
+                <h2 class="mw-featured-title" data-mv-title>BIỂN HÁT CHIỀU NAY</h2>
+                <p class="mw-featured-jp" data-mv-jp-title>夕暮れに歌う海</p>
+                <p class="mw-featured-desc" data-mv-description>
+                    A journey following the call of the sea — from Japan to Vietnam, from morning light to sunset and night.
+                </p>
+                <div class="mw-featured-meta mw-mono">
+                    <span class="mw-featured-duration" data-mv-duration>4:20</span>
+                    <span class="mw-featured-locations" data-mv-locations></span>
+                </div>
+            </a>
+        </section>
+
+        <!-- SCENE 03 — OTHER WORKS -->
+        <section class="mw-scene mw-works" aria-label="Other music and MV works">
+            <p class="mw-works-eyebrow mw-mono" data-reveal>MORE STORIES</p>
+
+            <div class="mw-works-track" data-works-track hidden data-reveal></div>
+
+            <div class="mw-works-empty" data-works-empty data-reveal>
+                <p>More visual stories arriving soon.</p>
+            </div>
+        </section>
+
+        <!-- SCENE 03.5 — ORIGINAL SONGS -->
+        <section class="mw-scene mw-scene-full mw-originals" id="mw-originals" aria-label="Original songs, under construction">
+            <div class="mw-horizon" aria-hidden="true"></div>
+            <p class="mw-originals-eyebrow mw-mono" data-reveal>ORIGINAL SONGS</p>
+            <h2 class="mw-originals-title" data-reveal>Sáng Tác Gốc</h2>
+            <p class="mw-originals-desc" data-reveal>
+                A new original song is on its way — currently being recorded ahead of copyright registration.
+            </p>
+            <span class="mw-originals-badge mw-mono" data-reveal>UNDER CONSTRUCTION</span>
+        </section>
+
+        <!-- SCENE 04 — SEA / MEMORY -->
+        <section class="mw-scene mw-scene-full mw-sea" aria-label="Sea and memory">
+            <div class="mw-horizon" aria-hidden="true"></div>
+            <p class="mw-sea-text" data-reveal>
+                Every sea carries a memory.<br>
+                Every song gives it <em>another life</em>.
+            </p>
+        </section>
+
+        <!-- SCENE 05 — YOUTUBE DESTINATION -->
+        <section class="mw-scene mw-destination" aria-label="Visit the YouTube channel">
+            <div class="mw-horizon" aria-hidden="true"></div>
+            <p class="mw-destination-eyebrow mw-mono" data-reveal>WATCH MORE MUSIC &amp; MV</p>
+            <a class="mw-destination-link" data-channel-link href="https://www.youtube.com/@ThanhBinhNguyen-kg7xr" target="_blank" rel="noopener noreferrer" data-reveal>
+                VISIT MY YOUTUBE ↗
+            </a>
+        </section>
+
+    </main>
+
+    <script src="music-world.js" defer></script>
+</body>
+</html>
