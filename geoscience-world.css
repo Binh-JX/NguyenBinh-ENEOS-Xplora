@@ -1,0 +1,752 @@
+/* =====================================================
+   GEOSCIENCE WORLD — geoscience-world.css
+
+   Scoped entirely under #geoscience-world. Does not touch, override,
+   or depend on anything from section-01.css, style.css,
+   music-world.css, video-world.css, or the inline Hero styles in
+   index.html.
+
+   Identity: Deep Blue / Midnight Blue, per Master Design §6.1 —
+   scientific, earth, exploration, geological, intelligent, deep,
+   professional. No large icons.
+
+   Architecture mirrors music-world.css / video-world.css on purpose
+   (same horizon thread motif, same reveal-on-scroll, same
+   contain+blur banner technique) so all four Hubs read as one shared
+   visual universe while each keeps its own identity, per §10.
+
+   STATUS: Scene 01 (Intro banner) only, per Creative Director
+   direction — "chỉ tạo geoscience banner nhé." Remaining scenes
+   (fieldwork/publications/research etc.) to follow in a later pass.
+===================================================== */
+
+#geoscience-world {
+    --void: #060b13;
+    --ink: #eef3f8;
+    --mist: rgba(238, 243, 248, .58);
+    --mist-faint: rgba(238, 243, 248, .32);
+    --blue: #3d6f9e;
+    --blue-bright: #7ec4f0;
+    --steel-deep: #0e1f33;
+    --steel-mid: #16324f;
+    --steel-glow: #234a70;
+
+    position: relative;
+    width: 100%;
+    background: var(--void);
+    color: var(--ink);
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+#geoscience-world * { box-sizing: border-box; }
+
+#geoscience-world .gs-mono {
+    font-family: 'Space Mono', 'Courier New', monospace;
+}
+
+#geoscience-world .gs-serif {
+    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+}
+
+/* Ambient film grain — same treatment as Music/Video World for a
+   consistent texture across the site. */
+#geoscience-world .gs-grain {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    opacity: .05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* =====================================================
+   HUB SWITCHER — jump to any World or back to the opening film
+===================================================== */
+#geoscience-world .gs-hubnav,
+.gs-hubnav {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 60;
+    font-family: 'Space Mono', monospace;
+}
+
+.gs-hubnav-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 26px;
+    color: var(--blue-bright, #7ec4f0);
+    background: rgba(9, 18, 30, .68);
+    border: 1.5px solid rgba(126, 196, 240, .55);
+    backdrop-filter: blur(10px);
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 24px rgba(61, 111, 158, .28), 0 0 0 1px rgba(61, 111, 158, .12);
+    transition: color .3s ease, border-color .3s ease, background-color .3s ease, box-shadow .3s ease, transform .3s ease;
+}
+
+.gs-hubnav-trigger svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.gs-hubnav-trigger:hover,
+.gs-hubnav-trigger:focus-visible,
+.gs-hubnav[data-open="true"] .gs-hubnav-trigger {
+    color: #fff;
+    border-color: var(--blue-bright, #7ec4f0);
+    background: rgba(9, 18, 30, .88);
+    box-shadow: 0 6px 32px rgba(61, 111, 158, .42), 0 0 0 1px rgba(61, 111, 158, .2);
+    transform: translateY(-1px);
+}
+
+.gs-hubnav-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 210px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    background: rgba(7, 13, 22, .92);
+    border: 1px solid rgba(238, 243, 248, .14);
+    border-radius: 10px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .45);
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
+}
+
+.gs-hubnav-menu[hidden] { display: flex; }
+
+.gs-hubnav[data-open="true"] .gs-hubnav-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.gs-hubnav-link {
+    padding: 10px 14px;
+    border-radius: 6px;
+    color: var(--mist, #a8b6c4);
+    text-decoration: none;
+    font-size: .78rem;
+    letter-spacing: .04em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color .2s ease, background-color .2s ease;
+}
+
+.gs-hubnav-link:hover,
+.gs-hubnav-link:focus-visible {
+    color: #eef3f8;
+    background: rgba(238, 243, 248, .07);
+}
+
+.gs-hubnav-link.is-current {
+    color: var(--blue-bright, #7ec4f0);
+    background: rgba(61, 111, 158, .16);
+}
+
+.gs-hubnav-link.gs-hubnav-home {
+    margin-bottom: 6px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed rgba(238, 243, 248, .16);
+    color: #eef3f8;
+}
+
+/* ---------- Shared scene shell ---------- */
+#geoscience-world .gs-scene {
+    position: relative;
+    width: 100%;
+}
+
+#geoscience-world .gs-scene-full {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Horizon thread — same signature motif as Music/Video World,
+   recoloured to the deep-blue identity. */
+#geoscience-world .gs-horizon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--horizon-y, 50%);
+    height: 1px;
+    z-index: 2;
+    background: linear-gradient(90deg, transparent, var(--blue) 35%, var(--blue-bright) 50%, var(--blue) 65%, transparent);
+    box-shadow: 0 0 18px 1px rgba(61, 111, 158, .35);
+    opacity: .55;
+    pointer-events: none;
+}
+
+/* Reveal-on-scroll base state */
+#geoscience-world [data-reveal] {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+#geoscience-world [data-reveal].is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================================================
+   SCENE 01 — INTRO
+===================================================== */
+#geoscience-world .gs-intro {
+    background:
+        radial-gradient(120% 90% at 20% 15%, rgba(22, 50, 79, .5), transparent 60%),
+        radial-gradient(90% 70% at 85% 90%, rgba(61, 111, 158, .16), transparent 55%),
+        linear-gradient(180deg, #0a1522 0%, var(--void) 70%);
+    padding: clamp(28px, 6vw, 90px);
+    padding-bottom: clamp(70px, 12vh, 130px);
+    padding-top: 0;
+    --horizon-y: 62%;
+}
+
+/* Real photo banner — fills the top half of the intro scene, same
+   technique as Music/Video World: object-fit contain so nothing in
+   the photo is cropped, with a blurred scaled-up copy filling the
+   empty space instead of flat void-colour bars. */
+#geoscience-world .gs-intro-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50vh;
+    z-index: 0;
+    overflow: hidden;
+    background-color: var(--void);
+}
+
+#geoscience-world .gs-intro-banner::before {
+    content: "";
+    position: absolute;
+    inset: -6%;
+    background-image: url("geoscience-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(45px) brightness(.8) saturate(1.15);
+    transform: scale(1.15);
+    z-index: 0;
+}
+
+/* Deep-blue ambient glow — fills the letterboxed margins with a
+   designed, on-brand tint rather than empty dark space. */
+#geoscience-world .gs-intro-banner-glow {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        radial-gradient(60% 100% at 50% 45%, rgba(126, 196, 240, .12), transparent 62%),
+        radial-gradient(35% 70% at 0% 50%, rgba(61, 111, 158, .18), transparent 70%),
+        radial-gradient(35% 70% at 100% 50%, rgba(61, 111, 158, .18), transparent 70%);
+}
+
+#geoscience-world .gs-intro-banner-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    z-index: 2;
+}
+
+/* Soft fade from the photo into the theme's midnight tone below. */
+#geoscience-world .gs-intro-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background: linear-gradient(180deg, rgba(6, 11, 19, 0) 62%, var(--void) 100%);
+}
+
+@media (max-width: 640px) {
+    #geoscience-world .gs-intro-banner { height: 42vh; }
+}
+
+#geoscience-world .gs-intro-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px 32px;
+}
+
+#geoscience-world .gs-intro-eyebrow {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    margin: 0 0 22px 0;
+}
+
+#geoscience-world .gs-intro-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(3.2rem, 10vw, 8rem);
+    line-height: .95;
+    letter-spacing: .01em;
+    margin: 0 0 20px 0;
+}
+
+#geoscience-world .gs-intro-tagline {
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
+    font-weight: 300;
+    color: var(--mist);
+    max-width: 44ch;
+    margin: 0;
+}
+
+/* Intro tabs — jump to Published Papers / Field Trips, same pattern
+   as Music/Video World's intro tabs. */
+#geoscience-world .gs-intro-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+#geoscience-world .gs-intro-tab {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 24px;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: clamp(.85rem, 1.6vw, 1.05rem);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--mist);
+    text-decoration: none;
+    background: rgba(6, 11, 19, .4);
+    border: 1px solid rgba(238, 243, 248, .2);
+    backdrop-filter: blur(6px);
+    border-radius: 2px;
+    transition: color .35s ease, border-color .35s ease, background-color .35s ease;
+}
+
+#geoscience-world .gs-intro-tab:hover,
+#geoscience-world .gs-intro-tab:focus-visible,
+#geoscience-world .gs-intro-tab.is-active {
+    color: var(--blue-bright);
+    border-color: var(--blue);
+    background: rgba(6, 11, 19, .58);
+}
+
+/* =====================================================
+   SCENE 02 — PUBLISHED PAPERS
+===================================================== */
+#geoscience-world .gs-papers {
+    padding: clamp(60px, 10vw, 120px) clamp(24px, 6vw, 90px);
+    background: linear-gradient(180deg, var(--void) 0%, #0a1522 100%);
+}
+
+#geoscience-world .gs-papers-head {
+    max-width: 72ch;
+    margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+#geoscience-world .gs-papers-eyebrow {
+    font-size: .7rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    margin: 0 0 14px 0;
+}
+
+#geoscience-world .gs-papers-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
+    line-height: 1.05;
+    margin: 0 0 18px 0;
+}
+
+#geoscience-world .gs-papers-desc {
+    font-size: clamp(.95rem, 1.4vw, 1.1rem);
+    color: var(--mist);
+    line-height: 1.6;
+    max-width: 68ch;
+    margin: 0 0 24px 0;
+}
+
+#geoscience-world .gs-papers-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    font-size: .78rem;
+    letter-spacing: .06em;
+    color: var(--mist-faint);
+}
+
+#geoscience-world .gs-papers-stats strong {
+    color: var(--blue-bright);
+    font-size: 1rem;
+    margin-right: 6px;
+}
+
+#geoscience-world .gs-papers-track {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: clamp(36px, 5vw, 56px);
+    border-top: 1px solid rgba(238, 243, 248, .12);
+}
+
+#geoscience-world .gs-paper {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: clamp(18px, 2.4vw, 26px) 4px;
+    border-bottom: 1px solid rgba(238, 243, 248, .12);
+    transition: background-color .3s ease, padding-left .3s ease;
+}
+
+#geoscience-world .gs-paper:hover,
+#geoscience-world .gs-paper:focus-visible {
+    background: rgba(61, 111, 158, .08);
+    padding-left: 14px;
+}
+
+#geoscience-world .gs-paper-title {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 8px;
+}
+
+#geoscience-world .gs-paper:hover .gs-paper-title,
+#geoscience-world .gs-paper:focus-visible .gs-paper-title {
+    color: var(--blue-bright);
+}
+
+#geoscience-world .gs-paper-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: .68rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--mist-faint);
+}
+
+#geoscience-world .gs-papers-cta {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    color: var(--ink);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 6px;
+    transition: color .4s ease;
+}
+
+#geoscience-world .gs-papers-cta::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--blue);
+    transform: scaleX(.3);
+    transform-origin: left;
+    transition: transform .5s ease, background-color .4s ease;
+}
+
+#geoscience-world .gs-papers-cta:hover,
+#geoscience-world .gs-papers-cta:focus-visible {
+    color: var(--blue-bright);
+}
+
+#geoscience-world .gs-papers-cta:hover::after,
+#geoscience-world .gs-papers-cta:focus-visible::after {
+    transform: scaleX(1);
+    background: var(--blue-bright);
+}
+
+/* =====================================================
+   SCENE 03 — GEOLOGICAL FIELD TRIPS
+===================================================== */
+#geoscience-world .gs-fieldtrips {
+    padding: clamp(60px, 10vw, 120px) clamp(24px, 6vw, 90px);
+    justify-content: center;
+    --horizon-y: 22%;
+    background:
+        radial-gradient(70% 55% at 50% 10%, rgba(61, 111, 158, .12), transparent 60%),
+        linear-gradient(180deg, #0a1522 0%, var(--void) 100%);
+}
+
+#geoscience-world .gs-fieldtrips-eyebrow {
+    font-size: .7rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 0 0 14px 0;
+}
+
+#geoscience-world .gs-fieldtrips-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
+    line-height: 1.05;
+    margin: 0 0 40px 0;
+}
+
+#geoscience-world .gs-fieldtrips-track {
+    display: flex;
+    gap: clamp(20px, 3vw, 40px);
+    overflow-x: auto;
+    padding-bottom: 12px;
+    scroll-snap-type: x proximity;
+}
+
+#geoscience-world .gs-trip {
+    flex: 0 0 clamp(240px, 32vw, 380px);
+    scroll-snap-align: start;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+#geoscience-world .gs-trip-visual {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--steel-deep);
+}
+
+#geoscience-world .gs-trip-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(180deg, rgba(6, 11, 19, .1), rgba(6, 11, 19, .38));
+    transition: background-color .3s ease;
+}
+
+#geoscience-world .gs-trip:hover .gs-trip-play,
+#geoscience-world .gs-trip:focus-visible .gs-trip-play {
+    background: rgba(6, 11, 19, .5);
+}
+
+#geoscience-world .gs-trip-title {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+#geoscience-world .gs-trip-subtitle {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: .65rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--mist-faint);
+}
+
+#geoscience-world .gs-fieldtrips-empty {
+    max-width: 46ch;
+}
+
+#geoscience-world .gs-fieldtrips-empty p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+    color: var(--mist);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* =====================================================
+   SCENE 04 — AFFILIATIONS
+===================================================== */
+#geoscience-world .gs-affiliations {
+    padding: clamp(60px, 10vw, 120px) clamp(24px, 6vw, 90px);
+    background: linear-gradient(180deg, var(--void) 0%, #0a1522 100%);
+}
+
+#geoscience-world .gs-affiliations-head {
+    max-width: 72ch;
+    margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+#geoscience-world .gs-affiliations-eyebrow {
+    font-size: .7rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    margin: 0 0 14px 0;
+}
+
+#geoscience-world .gs-affiliations-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
+    line-height: 1.05;
+    margin: 0 0 18px 0;
+}
+
+#geoscience-world .gs-affiliations-desc {
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    color: var(--mist);
+    line-height: 1.6;
+    max-width: 68ch;
+    margin: 0;
+}
+
+#geoscience-world .gs-affiliations-track {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: rgba(238, 243, 248, .12);
+    border: 1px solid rgba(238, 243, 248, .12);
+}
+
+#geoscience-world .gs-affiliation {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: clamp(30px, 3.6vw, 42px);
+    background: var(--void);
+    text-decoration: none;
+    color: inherit;
+    transition: background-color .35s ease;
+}
+
+#geoscience-world .gs-affiliation:hover,
+#geoscience-world .gs-affiliation:focus-visible {
+    background: rgba(61, 111, 158, .1);
+}
+
+#geoscience-world .gs-affiliation-role {
+    font-family: 'Space Mono', monospace;
+    font-size: .75rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+}
+
+#geoscience-world .gs-affiliation-org {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+    line-height: 1.3;
+    color: var(--ink);
+}
+
+#geoscience-world .gs-affiliation-caption {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--mist);
+    margin: 0;
+}
+
+#geoscience-world .gs-affiliation-link {
+    margin-top: auto;
+    font-family: 'Space Mono', monospace;
+    font-size: .75rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--mist-faint);
+    transition: color .3s ease;
+}
+
+#geoscience-world .gs-affiliation:hover .gs-affiliation-link,
+#geoscience-world .gs-affiliation:focus-visible .gs-affiliation-link {
+    color: var(--blue-bright);
+}
+
+/* =====================================================
+   SCENE 05 / 06 — UNDER CONSTRUCTION (Geology Game, Geology AI)
+===================================================== */
+#geoscience-world .gs-construction {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(60% 55% at 50% 50%, rgba(61, 111, 158, .1), transparent 65%),
+        linear-gradient(180deg, #0a1522 0%, var(--void) 100%);
+}
+
+#geoscience-world .gs-construction-content {
+    max-width: 62ch;
+    padding: 0 clamp(24px, 6vw, 90px);
+}
+
+#geoscience-world .gs-construction-eyebrow {
+    font-size: .8rem;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 0 0 20px 0;
+}
+
+#geoscience-world .gs-construction-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(4rem, 11vw, 9rem);
+    line-height: .98;
+    margin: 0 0 26px 0;
+    color: var(--ink);
+}
+
+#geoscience-world .gs-construction-tagline {
+    font-style: italic;
+    font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+    color: var(--mist);
+    margin: 0 0 34px 0;
+}
+
+#geoscience-world .gs-construction-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 22px;
+    font-size: .65rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--mist-faint);
+    border: 1px solid rgba(238, 243, 248, .18);
+    border-radius: 999px;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    #geoscience-world [data-reveal] { transition: opacity .3s linear; transform: none !important; }
+}

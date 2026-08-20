@@ -1,0 +1,291 @@
+/* =====================================================
+   HERO EXPERIENCE — hero-experience.css
+   YEARS BEHIND (5 living photographs) → NOW → FORWARD → BEYOND
+
+   Progressive enhancement: everything here is written so that with
+   JS disabled or failing, the first memory photo and the four hub
+   portals are simply visible and usable — nothing depends on the
+   animation to be reachable. hero-experience.js adds the timed
+   sequence on top of this resting state.
+===================================================== */
+
+.hero-experience {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #05070a;
+    isolation: isolate;
+}
+
+.hero-stage {
+    position: absolute;
+    inset: 0;
+}
+
+/* ---------- YEARS BEHIND — memory field ---------- */
+
+.hero-memory {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-frame {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 2.4s ease;
+}
+
+/* No-JS / first-paint fallback: the first memory is simply visible,
+   so there's always something on screen and nothing is ever blocked
+   on script execution. JS takes over from here via .is-active. */
+.hero-frame:first-child {
+    opacity: 1;
+}
+
+.hero-frame.is-active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.hero-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.04);
+    filter: brightness(.82) saturate(1.05);
+}
+
+.hero-frame.is-active img {
+    animation: hero-drift 8.5s ease-in-out forwards;
+}
+
+@keyframes hero-drift {
+    from { transform: scale(1.03) translate3d(0, 0, 0); }
+    to   { transform: scale(1.1) translate3d(-1.4%, -1%, 0); }
+}
+
+/* Soft vignette so captions stay legible over any of the five photos */
+.hero-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background:
+        linear-gradient(180deg, rgba(5,7,10,.55) 0%, rgba(5,7,10,.1) 22%, rgba(5,7,10,.1) 60%, rgba(5,7,10,.75) 100%),
+        radial-gradient(120% 90% at 50% 50%, transparent 45%, rgba(5,7,10,.35) 100%);
+}
+
+/* ---------- NOW — a held, quiet breath ---------- */
+
+.hero-now {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    background: #05070a;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.6s ease;
+}
+
+.hero-now.is-active {
+    opacity: 1;
+}
+
+.hero-now::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(48% 40% at 50% 48%, rgba(201, 178, 140, .10), transparent 70%);
+    animation: hero-breathe 6s ease-in-out infinite;
+}
+
+@keyframes hero-breathe {
+    0%, 100% { opacity: .6; }
+    50% { opacity: 1; }
+}
+
+/* ---------- FORWARD / BEYOND — light and movement, no scene ---------- */
+
+.hero-forward {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 3s ease;
+    background:
+        radial-gradient(120% 70% at 50% 118%, rgba(244, 214, 154, .5) 0%, rgba(201, 162, 74, .22) 32%, transparent 62%),
+        linear-gradient(180deg, #05070a 0%, #0d1420 38%, #1c2438 70%, #2c2a34 100%);
+    background-size: 100% 220%;
+    background-position: 50% 100%;
+}
+
+.hero-forward.is-active {
+    opacity: 1;
+    animation: hero-dawn 26s ease-out forwards;
+}
+
+@keyframes hero-dawn {
+    0%   { background-position: 50% 100%; }
+    100% { background-position: 50% 0%; }
+}
+
+/* ---------- Captions ---------- */
+
+.hero-caption {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.hero-caption-line {
+    position: absolute;
+    margin: 0;
+    text-align: center;
+    color: #f4eee0;
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+    font-weight: 300;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+    font-size: clamp(.85rem, 1.6vw, 1.15rem);
+    opacity: 0;
+    transition: opacity 1.8s ease, transform 1.8s ease;
+    transform: translateY(10px);
+}
+
+.hero-caption-line.is-active {
+    opacity: .85;
+    transform: translateY(0);
+}
+
+.hero-caption-line[data-hero-caption="beyond"] {
+    font-size: clamp(1.6rem, 5vw, 3.2rem);
+    letter-spacing: .5em;
+    font-weight: 400;
+}
+
+/* ---------- Hub portals ---------- */
+
+.action-box {
+    position: absolute;
+    bottom: clamp(24px, 5vh, 56px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0 4%;
+    box-sizing: border-box;
+    z-index: 7;
+    opacity: 1;
+    transition: opacity 1.4s ease;
+}
+
+/* Only hidden pre-reveal when JS confirms the sequence is running —
+   see hero-experience.js. Without that class, hubs stay visible.
+   The hide itself is instant (no transition) so hubs never flash
+   visible-then-fade at load; only the reveal animates. */
+.hero-experience.is-sequenced .action-box {
+    opacity: 0;
+    pointer-events: none;
+    transition: none;
+}
+
+.hero-experience.is-sequenced .action-box.is-revealed {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 1.4s ease;
+}
+
+.action-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.btn-hub {
+    padding: 34px 68px;
+    background: rgba(5, 7, 10, 0.4);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 999px;
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-align: center;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+    transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.btn-hub:hover,
+.btn-hub:focus-visible {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.45);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 900px) {
+    .btn-hub {
+        padding: 26px 48px;
+        font-size: 1.9rem;
+        gap: 16px;
+    }
+    .action-links {
+        gap: 22px;
+    }
+}
+
+@media (max-width: 640px) {
+    .btn-hub {
+        padding: 22px 40px;
+        font-size: 1.6rem;
+        gap: 14px;
+    }
+    .action-links {
+        gap: 18px;
+    }
+    .action-box {
+        bottom: clamp(20px, 4vh, 40px);
+    }
+    .hero-frame img {
+        object-position: center 38%;
+    }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-frame,
+    .hero-now,
+    .hero-forward,
+    .hero-caption-line,
+    .action-box {
+        transition-duration: .4s;
+    }
+    .hero-frame.is-active img,
+    .hero-forward.is-active {
+        animation: none;
+    }
+    .hero-now::before {
+        animation: none;
+        opacity: .8;
+    }
+}
