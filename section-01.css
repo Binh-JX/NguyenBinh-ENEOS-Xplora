@@ -1,0 +1,358 @@
+/* =====================================================
+   SECTION 01 — THE THREE-CLIP CINEMATIC JOURNEY
+   section-01.css
+   Scoped entirely under #section-01 so it cannot
+   collide with index.html's existing inline styles,
+   the action-box buttons, or style.css (unused/legacy).
+===================================================== */
+
+#section-01 {
+    --void: #05070a;
+    --ink: #f5f3ee;
+    --mist: rgba(245, 243, 238, 0.6);
+
+    /* Act accents — colour is how the journey narrates itself */
+    --act-earth: #3fa796;   /* CLIP 01 — seen from above, ocean/land */
+    --act-pulse: #d9663f;   /* CLIP 02 — felt from within, warm/organic */
+    --act-beyond: #8c7ae6;  /* CLIP 03 — beyond, cold violet light */
+    --act-current: var(--act-earth);
+
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 560px;
+    background: var(--void);
+    color: var(--ink);
+    overflow: hidden;
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+}
+
+#section-01 * { box-sizing: border-box; }
+
+/* ---------- Fonts ---------- */
+/* Space Grotesk: geometric/technical display type, echoes mission-control
+   signage. Space Mono: telemetry-style caption face for the small labels. */
+#section-01 .s01-mono {
+    font-family: 'Space Mono', 'Courier New', monospace;
+}
+
+/* ---------- Video layers ---------- */
+#section-01 .s01-stage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#section-01 .s01-clip {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+    background: var(--void);
+}
+
+#section-01 .s01-clip.is-active {
+    opacity: 1;
+}
+
+/* Darken video slightly so overlay text stays legible. Kept as its own
+   layer, fully opaque on the dark gradient only — no act colour mixed
+   in here, so the clip's true colours are never touched by this part. */
+#section-01 .s01-tint {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(5,7,10,.55) 0%, rgba(5,7,10,.15) 38%, rgba(5,7,10,.75) 100%);
+    pointer-events: none;
+}
+
+/* Faint act-colour wash for cohesion between chapters — kept deliberately
+   light (22% soft-light) so it reads as a subtle mood shift rather than
+   recolouring the footage. This is what was causing Clip-02 to look
+   brown/red; opacity was .85 before. */
+#section-01 .s01-tint::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--act-current);
+    mix-blend-mode: soft-light;
+    opacity: .22;
+    transition: background-color 1.2s ease, opacity 1.2s ease;
+    pointer-events: none;
+}
+
+/* Placeholder shown per-clip if its mp4 hasn't been added to the
+   repo yet / fails to load, so the section degrades gracefully
+   instead of showing a broken frame. */
+#section-01 .s01-clip-fallback {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--act-current) 35%, var(--void)) 0%, var(--void) 75%);
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+#section-01 .s01-clip-fallback.is-active { opacity: 1; }
+
+#section-01[data-media="missing"] .s01-clip-fallback.is-current-act {
+    display: flex;
+}
+
+#section-01 .s01-clip-fallback p {
+    max-width: 480px;
+    font-size: .95rem;
+    line-height: 1.6;
+    color: var(--mist);
+}
+
+#section-01 .s01-clip-fallback strong {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: .75rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 10px;
+}
+
+/* ---------- Overlay copy ---------- */
+#section-01 .s01-overlay {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: clamp(24px, 5vw, 80px);
+    padding-bottom: clamp(130px, 16vh, 190px);
+}
+
+#section-01 .s01-act-label {
+    font-size: clamp(1.4rem, 2vw, 1.7rem);
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: var(--act-current);
+    transition: color .6s ease;
+    margin: 0 0 18px 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .8s ease, transform .8s ease, color .6s ease;
+}
+
+#section-01 .s01-headline {
+    font-size: clamp(4.4rem, 12vw, 10rem);
+    line-height: 1.02;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    margin: 0 0 16px 0;
+    max-width: 16ch;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .9s ease .1s, transform .9s ease .1s;
+}
+
+#section-01 .s01-subline {
+    font-size: clamp(2rem, 3.2vw, 2.7rem);
+    font-weight: 300;
+    color: var(--mist);
+    max-width: 46ch;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .9s ease .22s, transform .9s ease .22s;
+}
+
+#section-01[data-active-visible="true"] .s01-act-label,
+#section-01[data-active-visible="true"] .s01-headline,
+#section-01[data-active-visible="true"] .s01-subline {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Journey path (EARTH → HUMANITY → EARTH PULSE → HORIZON → SPACE → BEYOND) ---------- */
+#section-01 .s01-journey {
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 0;
+    margin-top: 22px;
+    font-size: 1.36rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(245, 243, 238, .4);
+}
+
+#section-01 .s01-journey span {
+    padding: 0 10px;
+    position: relative;
+}
+
+#section-01 .s01-journey span:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    right: -3px;
+    color: rgba(245, 243, 238, .25);
+}
+
+#section-01 .s01-journey span.is-reached {
+    color: var(--ink);
+}
+
+#section-01 .s01-journey span.is-final {
+    color: var(--act-beyond);
+    font-weight: 700;
+}
+
+/* ---------- Progress ticks / act selector (signature element) ---------- */
+#section-01 .s01-progress {
+    position: absolute;
+    right: clamp(20px, 4vw, 60px);
+    bottom: clamp(28px, 6vh, 60px);
+    z-index: 4;
+    display: flex;
+    gap: 14px;
+    align-items: flex-end;
+}
+
+#section-01 .s01-tick {
+    appearance: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(245, 243, 238, .5);
+    font-family: 'Space Mono', monospace;
+}
+
+#section-01 .s01-tick .s01-tick-num {
+    font-size: .7rem;
+    letter-spacing: .08em;
+}
+
+#section-01 .s01-tick .s01-tick-bar {
+    width: 2px;
+    height: 34px;
+    background: rgba(245, 243, 238, .25);
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+#section-01 .s01-tick .s01-tick-bar::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: var(--act-current);
+    transition: height .3s linear, background-color .6s ease;
+}
+
+#section-01 .s01-tick[aria-current="true"] {
+    color: var(--ink);
+}
+
+#section-01 .s01-tick[aria-current="true"] .s01-tick-bar::after {
+    height: var(--fill, 0%);
+}
+
+#section-01 .s01-tick.is-complete .s01-tick-bar::after {
+    height: 100%;
+}
+
+#section-01 .s01-tick:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+}
+
+/* ---------- Horizon glow — the through-line motif that shifts colour
+   act to act, standing in for the "horizon" beat of the journey ---------- */
+#section-01 .s01-horizon {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 2px;
+    z-index: 3;
+    background: linear-gradient(90deg, transparent, var(--act-current), transparent);
+    box-shadow: 0 0 24px 4px var(--act-current);
+    transition: background .8s ease, box-shadow .8s ease;
+    opacity: .8;
+}
+
+/* ---------- Scroll cue into the rest of the homepage ---------- */
+#section-01 .s01-scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(24px, 4vh, 40px);
+    transform: translateX(-50%);
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    color: var(--mist);
+    font-size: clamp(1.8rem, 6vw, 3.25rem);
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    opacity: .85;
+}
+
+#section-01 .s01-scroll-cue svg {
+    width: clamp(22px, 5vw, 40px);
+    height: clamp(22px, 5vw, 40px);
+    animation: s01-bob 2.2s ease-in-out infinite;
+}
+
+@keyframes s01-bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+/* ---------- Sound toggle ---------- */
+#section-01 .s01-sound-toggle {
+    position: absolute;
+    top: clamp(20px, 4vw, 40px);
+    right: clamp(20px, 4vw, 40px);
+    z-index: 4;
+    background: rgba(5, 7, 10, .45);
+    border: 1px solid rgba(245, 243, 238, .25);
+    color: var(--ink);
+    font-family: 'Space Mono', monospace;
+    font-size: .7rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    #section-01 .s01-clip { transition: opacity .3s linear; }
+    #section-01 .s01-act-label,
+    #section-01 .s01-headline,
+    #section-01 .s01-subline { transition: opacity .3s linear; transform: none !important; }
+    #section-01 .s01-scroll-cue svg { animation: none; }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 640px) {
+    #section-01 .s01-overlay { padding-bottom: 190px; }
+    #section-01 .s01-progress {
+        right: 20px;
+        bottom: 90px;
+    }
+    #section-01 .s01-journey { display: none; }
+}
