@@ -240,7 +240,7 @@
     content: "";
     position: absolute;
     inset: -6%;
-    background-image: url("music-banner.JPG");
+    background-image: url("music-banner.jpg");
     background-size: cover;
     background-position: center;
     filter: blur(60px) brightness(.55) saturate(1.1);
