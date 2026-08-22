@@ -42,8 +42,8 @@
         {
             title: "BIỂN HÁT CHIỀU NAY",
             subtitle: "Karaoke Ver. · Lời Việt–Nhật · 4:20",
-            image: "music-banner.jpg",
-            imageFallback: "music-banner.jpg",
+            image: "Bien hat chieu nay Karaoke.jpg",
+            imageFallback: "Bien hat chieu nay Karaoke.jpg",
             youtubeUrl: "https://youtu.be/Ki7iV8GAhZM",
             description: "Bilingual Vietnamese–Japanese karaoke version, built on the original MV footage.",
             credit: "Japanese lyric translation: Thanh Bình, from her original bilingual vocal performance."
