@@ -30,8 +30,8 @@
         {
             title: "BIỂN HÁT CHIỀU NAY",
             japaneseTitle: "夕暮れに歌う海",
-            image: "music-banner.jpg", // real thumbnail, confirmed via YouTube Studio
-            imageFallback: "music-banner.jpg", // used if maxres isn't available for this video
+            image: "Bien hat chieu nay-cover.png", // real thumbnail, confirmed via YouTube Studio
+            imageFallback: "Bien hat chieu nay-cover.png", // used if maxres isn't available for this video
             duration: "4:21",
             youtubeUrl: "https://youtu.be/ku110OHK_FY", // confirmed via YouTube Studio: "BIỂN HÁT CHIỀU NAY | 夕暮れに歌う海 | Thanh Bình Cover"
             locations: ["Ito", "Jogasaki", "Kadowaki Cape", "Atami", "Lý Sơn Island", "Thiên Cầm", "Bình Thuận"],
