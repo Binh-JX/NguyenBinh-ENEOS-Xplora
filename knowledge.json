@@ -1,7 +1,7 @@
 {
   "_readme": "This is the SOURCE OF TRUTH for site-wide content and SEO/AI entity data — not fetched by any page at runtime (the site is opened as a local file:// page during review, and browsers block fetch() of local JSON under file://). Edit this file first, then copy the relevant fields into the matching <script type='application/ld+json'> block inside each hub's HTML <head>. Keep the two in sync by hand.",
   "person": {
-    "@id": "https://vercel.app",
+    "@id": "https://vercel.app#person",
     "name": "Nguyen Binh",
     "alternateName": [
       "Binh Nguyen",
@@ -39,19 +39,20 @@
       "Video Storytelling"
     ],
     "bio": "A multidisciplinary practitioner at ENEOS Xplora (Tokyo) who brings the same systems thinking from subsurface engineering and geoscience into open innovation, and the same care for storytelling into music and video — technical rigor and creative expression treated as one continuous practice, not two separate lives.",
-    "url": "https://nguyenbinh-eneos.vercel.app/",
+    "url": "https://vercel.app",
     "sameAs": [
       "https://orcid.org",
       "https://orcid.org",
       "https://researchgate.net",
       "https://jst.go.jp",
       "https://linkedin.com",
-      "https://www.youtube.com/@ThanhBinhNguyen-kg7xr"
+      "https://github.com",
+      "https://youtube.com"
     ]
   },
   "site": {
-    "name": "Nguyen Binh | Thanh Bình Nguyễn - Personal Knowledge Hub",
-    "url": "https://nguyenbinh-eneos.vercel.app/",
+    "name": "Nguyen Binh | Nguyễn Thị Thanh Bình - Personal Knowledge Hub",
+    "url": "https://vercel.app",
     "repo": "Binh-JX/NguyenBinh-ENEOS-Xplora"
   },
   "hubs": {
