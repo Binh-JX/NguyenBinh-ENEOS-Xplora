@@ -1,43 +1,72 @@
 {
   "_readme": "This is the SOURCE OF TRUTH for site-wide content and SEO/AI entity data — not fetched by any page at runtime (the site is opened as a local file:// page during review, and browsers block fetch() of local JSON under file://). Edit this file first, then copy the relevant fields into the matching <script type='application/ld+json'> block inside each hub's HTML <head>. Keep the two in sync by hand.",
   "person": {
-    "name": "Nguyễn Thị Thanh Bình",
-    "alternateName": "Thanh Bình",
+    "@id": "https://vercel.app",
+    "name": "Nguyen Binh",
+    "alternateName": [
+      "Binh Nguyen",
+      "Nguyễn Thị Thanh Bình",
+      "Nguyen Thi Thanh Binh",
+      "Thanh Bình Nguyễn",
+      "Thanh Bình",
+      "Nguyen Binh Thi Thanh",
+      "Thanh Binh Nguyen"
+    ],
+    "honorificPrefix": "Dr.",
     "jobTitle": [
-      "Geoscientist & Subsurface Engineer",
+      "Manager / Geoscientist & Subsurface Engineer",
       "Open Innovation Practitioner",
       "Musician",
       "Video Creator"
     ],
+    "worksFor": {
+      "name": "ENEOS Xplora Inc.",
+      "location": "Tokyo, Japan"
+    },
+    "alumniOf": [
+      "The University of Tokyo (PhD in Geosystem Engineering)",
+      "Hanoi University of Mining and Geology"
+    ],
     "knowsAbout": [
-      "Open Innovation",
+      "Geoscience",
       "Subsurface Engineering",
+      "Petroleum Geology",
+      "Geomechanics",
       "CCUS",
+      "Open Innovation",
       "Artificial Intelligence",
       "Music Production",
       "Video Storytelling"
     ],
-    "bio": "A multidisciplinary practitioner who brings the same systems thinking from subsurface engineering into open innovation, and the same care for storytelling into music and video — technical rigor and creative expression treated as one continuous practice, not two separate lives.",
-    "url": "index.html"
+    "bio": "A multidisciplinary practitioner at ENEOS Xplora (Tokyo) who brings the same systems thinking from subsurface engineering and geoscience into open innovation, and the same care for storytelling into music and video — technical rigor and creative expression treated as one continuous practice, not two separate lives.",
+    "url": "https://nguyenbinh-eneos.vercel.app/",
+    "sameAs": [
+      "https://orcid.org",
+      "https://orcid.org",
+      "https://researchgate.net",
+      "https://jst.go.jp",
+      "https://linkedin.com",
+      "https://www.youtube.com/@ThanhBinhNguyen-kg7xr"
+    ]
   },
   "site": {
-    "name": "Thanh Bình Nguyễn Hub",
-    "url": "index.html",
-    "repo": "Binh-JX/thanhbinh-hub"
+    "name": "Nguyen Binh | Thanh Bình Nguyễn - Personal Knowledge Hub",
+    "url": "https://nguyenbinh-eneos.vercel.app/",
+    "repo": "Binh-JX/NguyenBinh-ENEOS-Xplora"
   },
   "hubs": {
     "geoscience": {
-      "status": "not_built",
-      "about": "Subsurface Technology & CCUS",
-      "h1": "Thanh Bình | Geoscience & Subsurface Engineering",
-      "url": "geoscience.html",
-      "description": "PENDING — write once the Geoscience Hub content and structure are approved. Should describe subsurface engineering and CCUS work using the same entity-first language as the other three hubs."
+      "status": "built",
+      "about": "Subsurface Technology, Geomechanics & CCUS",
+      "h1": "Nguyen Binh | Geoscience & Subsurface Engineering",
+      "url": "https://vercel.app",
+      "description": "Nguyen Binh's Geoscience & Subsurface Engineering world: petroleum geology, geomechanics, pore pressure prediction, basin modeling, and CCUS research."
     },
     "innovation": {
       "status": "built",
       "about": "Open Innovation & AI",
-      "h1": "Thanh Bình | Innovation & Open Innovation Engineering",
-      "url": "innovation.html",
+      "h1": "Nguyen Binh | Innovation & Open Innovation Engineering",
+      "url": "https://vercel.app",
       "description": "Thanh Bình's Innovation world: original engineering frameworks, community co-creation from KAOS workshops, and curated global inspirations.",
       "sources": {
         "original": {
@@ -95,7 +124,7 @@
       "about": "Music Performance & Music Video Storytelling",
       "h1_note": "Visible H1 on the live page is styled as 'MUSIC & MV' (locked, unchanged). The fuller keyword-rich name below is carried in JSON-LD only, not shown on screen.",
       "h1": "Thanh Bình | Music & MV — Cover Performance and Original Songwriting",
-      "url": "music.html",
+      "url": "https://vercel.app",
       "description": "Thanh Bình's Music & MV world: Vietnamese–Japanese cover performances, original songwriting in production, and the music videos that carry them.",
       "youtubeChannel": "https://www.youtube.com/@ThanhBinhNguyen-kg7xr"
     },
@@ -105,7 +134,7 @@
       "about": "Personal Video Creation & Storytelling",
       "h1_note": "Visible H1 on the live page is styled as 'VIDEO CREATION' (locked, unchanged). The fuller keyword-rich name below is carried in JSON-LD only, not shown on screen.",
       "h1": "Thanh Bình | Video Creation — Personal Storytelling on Film",
-      "url": "video.html",
+      "url": "https://vercel.app",
       "description": "Thanh Bình's Video Creation world: class reunions, alumni gatherings, travel stories, and family birthdays kept and told again on video.",
       "youtubeChannel": "https://www.youtube.com/@ThanhBinhNguyen-kg7xr",
       "categories": [
