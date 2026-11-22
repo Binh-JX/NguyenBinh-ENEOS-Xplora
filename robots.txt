@@ -13,4 +13,10 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 Sitemap: https://nguyenbinh-eneos.vercel.app/sitemap.xml
