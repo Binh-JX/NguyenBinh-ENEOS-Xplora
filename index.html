@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="hpZvb4aTdz6Ir0CFzwGFh0U2arBA0SP-lH8Zhs5hiIs" />
-    <title>Nguyen Binh | Nguyễn Thị Thanh Bình - Personal Knowledge Hub</title>
+    <title>Nguyen Binh | Nguyễn Thị Thanh Bình – PhD in Geosystem Engineering (The University of Tokyo) | Manager at ENEOS Xplora, Tokyo</title>
+    <meta name="description" content="Nguyen Binh | Nguyễn Thị Thanh Bình (Binh Thi Thanh Nguyen) — PhD in Geosystem Engineering (The University of Tokyo), Tiến sĩ Kỹ thuật Hệ thống Địa chất; Manager at ENEOS Xplora, Tokyo.">
 
     <!-- Section 01: cinematic journey fonts + styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +46,36 @@
         @media (max-width: 640px) {
             .tb-visit { left: 16px; bottom: 16px; font-size: .82rem; }
         }
+
+        .profile-summary {
+            padding: clamp(3.5rem, 8vw, 7rem) max(7vw, calc((100% - 900px) / 2));
+            color: #e8e4dc;
+            background: #080b10;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+        }
+
+        .profile-summary h2 {
+            margin: 0 0 1.5rem;
+            color: #f4eee0;
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 400;
+            letter-spacing: .02em;
+        }
+
+        .profile-summary p {
+            max-width: 900px;
+            margin: 0 0 1rem;
+            color: rgba(232, 228, 220, .78);
+            font-size: clamp(1rem, 1.4vw, 1.125rem);
+            line-height: 1.8;
+        }
+
+        .profile-summary a {
+            color: #d7bd8a;
+            text-decoration: underline;
+            text-underline-offset: .2em;
+        }
     </style>
 
     <link rel="canonical" href="https://nguyenbinh-eneos.vercel.app/" />
@@ -52,86 +83,78 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": "https://nguyenbinh-eneos.vercel.app/#person",
-        "name": "Nguyen Binh",
-        "alternateName": [
-            "Nguyen Thi Thanh Binh",
-            "Nguyen Binh",
-            "Nguyễn Thị Thanh Bình",
-            "Thanh Bình Nguyễn",
-            "Thanh Bình"
-        ],
-        "honorificPrefix": "Dr.",
-        "jobTitle": [
-            "Manager",
-            "Geoscientist",
-            "Subsurface Engineer",
-            "Open Innovation Practitioner",
-            "Musician",
-            "Video Creator"
-        ],
-        "worksFor": {
-            "@type": "Organization",
-            "name": "ENEOS Xplora Inc.",
-            "department": "e-TEC",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Tokyo",
-                "addressCountry": "JP"
-            }
-        },
-        "alumniOf": [
+        "@graph": [
             {
-                "@type": "CollegeOrUniversity",
-                "name": "The University of Tokyo"
+                "@type": "Person",
+                "@id": "https://nguyenbinh-eneos.vercel.app/#person",
+                "name": "Nguyen Thi Thanh Binh",
+                "alternateName": [
+                    "Nguyen Binh",
+                    "Nguyễn Thị Thanh Bình",
+                    "Binh Thi Thanh Nguyen"
+                ],
+                "honorificPrefix": "Dr.",
+                "jobTitle": "Manager, e-Technology Innovation Center (e-TEC)",
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "ENEOS Xplora",
+                    "alternateName": "JX Nippon Oil & Gas Exploration Corporation",
+                    "department": {
+                        "@type": "Organization",
+                        "name": "e-Technology Innovation Center (e-TEC)"
+                    },
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Tokyo",
+                        "addressCountry": "JP"
+                    }
+                },
+                "alumniOf": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "The University of Tokyo"
+                },
+                "hasCredential": {
+                    "@type": "EducationalOccupationalCredential",
+                    "name": "PhD in Geosystem Engineering",
+                    "alternateName": "Tiến sĩ Kỹ thuật Hệ thống Địa chất",
+                    "recognizedBy": {
+                        "@type": "CollegeOrUniversity",
+                        "name": "The University of Tokyo"
+                    }
+                },
+                "knowsAbout": [
+                    "Geosystem Engineering",
+                    "Subsurface Pressure",
+                    "Pore Pressure",
+                    "In-situ Stress",
+                    "Basin Analysis",
+                    "Sediment Compaction",
+                    "Energy Innovation",
+                    "Music Production",
+                    "Video Creation"
+                ],
+                "description": "Nguyen Thi Thanh Binh (Nguyễn Thị Thanh Bình; Nguyen Binh; Binh Thi Thanh Nguyen) is a PhD-qualified geosystem engineer and Manager at ENEOS Xplora in Tokyo, working in subsurface science and innovation.",
+                "url": "https://nguyenbinh-eneos.vercel.app/",
+                "sameAs": [
+                    "https://github.com/Binh-JX",
+                    "https://www.youtube.com/@ThanhBinhNguyen-kg7xr",
+                    "https://www.researchgate.net/profile/Nguyen-Binh-24",
+                    "https://orcid.org/0009-0007-7727-990X"
+                ]
             },
             {
-                "@type": "CollegeOrUniversity",
-                "name": "Hanoi University of Mining and Geology",
-                "alternateName": "Trường Đại học Mỏ – Địa chất Hà Nội",
-                "department": {
-                    "@type": "Organization",
-                    "name": "Faculty of Oil and Gas",
-                    "alternateName": "Khoa Dầu khí"
-                }
+                "@type": "WebSite",
+                "@id": "https://nguyenbinh-eneos.vercel.app/#website",
+                "name": "Nguyen Binh | Nguyễn Thị Thanh Bình — Personal Knowledge Hub",
+                "url": "https://nguyenbinh-eneos.vercel.app/",
+                "publisher": {
+                    "@id": "https://nguyenbinh-eneos.vercel.app/#person"
+                },
+                "inLanguage": [
+                    "en",
+                    "vi"
+                ]
             }
-        ],
-        "hasCredential": {
-            "@type": "EducationalOccupationalCredential",
-            "name": "Undergraduate degree in Geophysics",
-            "alternateName": "Ngành Địa vật lý",
-            "credentialCategory": "undergraduate degree",
-            "recognizedBy": {
-                "@type": "CollegeOrUniversity",
-                "name": "Hanoi University of Mining and Geology"
-            }
-        },
-        "knowsAbout": [
-            "Geoscience",
-            "Subsurface Engineering",
-            "Petroleum Geology",
-            "Geomechanics",
-            "Pore Pressure Prediction",
-            "Sediment Compaction",
-            "Basin Analysis",
-            "CCUS",
-            "Open Innovation",
-            "Artificial Intelligence",
-            "Technology Scouting",
-            "Music Production",
-            "Vocal Performance",
-            "Japanese–Vietnamese Song Translation",
-            "Video Storytelling",
-            "Video Editing"
-        ],
-        "description": "Nguyen Thi Thanh Binh (Nguyễn Thị Thanh Bình) is a Manager, geoscientist, and subsurface engineer at ENEOS Xplora in Tokyo, as well as an open innovation practitioner, musician, and video creator.",
-        "url": "https://nguyenbinh-eneos.vercel.app/",
-        "sameAs": [
-            "https://github.com/Binh-JX",
-            "https://www.youtube.com/@ThanhBinhNguyen-kg7xr",
-            "https://www.researchgate.net/profile/Nguyen-Binh-24",
-            "https://orcid.org/0009-0007-7727-990X"
         ]
     }
     </script>
@@ -272,6 +295,19 @@
             </div>
         </div>
     </section>
+
+    <footer class="profile-summary" aria-labelledby="profile-summary-title">
+        <h2 id="profile-summary-title">About Nguyen Binh | Nguyễn Thị Thanh Bình</h2>
+        <p>
+            Nguyen Thi Thanh Binh (Nguyen Binh; Binh Thi Thanh Nguyen; Nguyễn Thị Thanh Bình) holds a PhD in Geosystem Engineering from The University of Tokyo (Tiến sĩ Kỹ thuật Hệ thống Địa chất, Đại học Tokyo). She is a Manager at the e-Technology Innovation Center (e-TEC), ENEOS Xplora, formerly JX Nippon Oil &amp; Gas Exploration Corporation, in Tokyo, Japan.
+        </p>
+        <p>
+            Her expertise includes subsurface pressure, sediment compaction, and basin analysis across Vietnam, Japan, Malaysia, the North Sea, and the Gulf of Mexico. Her creative interests include innovation, music and music videos (MV), and video creation.
+        </p>
+        <p>
+            <a href="https://www.researchgate.net/profile/Nguyen-Binh-24" target="_blank" rel="noopener noreferrer">ResearchGate profile</a>
+        </p>
+    </footer>
 
     <script src="hero-experience.js" defer></script>
 
