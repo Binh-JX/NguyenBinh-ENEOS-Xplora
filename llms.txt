@@ -35,17 +35,31 @@ The site also records field trips and professional affiliations with the Japan P
 
 The Innovation world documents her approach to turning questions into R&D opportunities: observe, question, explore, challenge, reframe, identify an opportunity, validate, and act. AI is presented as expanding the landscape for search, comparison, and technical due diligence rather than replacing human thinking.
 
-Published innovation posters cover:
+The exhibit presents five innovation posters:
 
-- Geopressure as energy: “The Geopressure-to-Value Pathway” and “Five Dimensions of Operational Value.”
-- Self-healing materials: “The Problem in Hydrogen Embrittlement.”
-- Biomass-derived high-value minerals: “The Next Battery Race” and “A New Supply Chain Is Emerging.”
+- **Geopressure as energy:** “The Geopressure-to-Value Pathway” explores converting geopressure into operational value; “Five Dimensions of Operational Value” frames the value across multiple dimensions.
+- **Self-healing materials:** “The Problem in Hydrogen Embrittlement” examines hydrogen embrittlement as the problem context for self-healing material ideas.
+- **Biomass-derived high-value minerals:** “The Next Battery Race” introduces the evolving battery supply landscape, and “A New Supply Chain Is Emerging” focuses on the emergence of new biomass-based supply chains.
 
-## Music and Video
+## Music and Creative Works
 
-Thanh Bình performs Vietnamese-Japanese bilingual cover songs and translates Japanese lyrics for her performances. Featured works include “BIỂN HÁT CHIỀU NAY (夕暮れに歌う海),” “ĐÔI BỜ,” and “MONG MANH TÌNH VỀ (儚い愛が戻る).” An original song is currently in production.
+Thanh Bình performs Vietnamese-Japanese bilingual cover songs, provides vocal performances, and translates Japanese lyrics herself.
 
-Her video work includes class reunions, alumni gatherings, travel stories, and sports journeys. She personally films and edits these videos, preserving reunion and travel memories.
+- **BIỂN HÁT CHIỀU NAY (夕暮れに歌う海)** is the featured MV and her first Vietnamese-Japanese bilingual performance of the song. Filmed locations include Ito, Jogasaki, Kadowaki Cape, Atami, Lý Sơn Island, Thiên Cầm, and Bình Thuận. The story follows the call of the sea from Japan to Vietnam, from morning light through sunset and night.
+- **BIỂN HÁT CHIỀU NAY — Karaoke Version** combines Vietnamese-Japanese lyrics with the original MV footage.
+- **MONG MANH TÌNH VỀ (儚い愛が戻る)** is a cover performed with Shiawase Band.
+- **ĐÔI BỜ** is a cover performed with CLB Shiawase.
+- **Original songs:** a new original song is being recorded ahead of copyright registration.
+
+The [Music and MV page](https://nguyenbinh-eneos.vercel.app/music.html) also links the full YouTube channel.
+
+## Video Creation
+
+Thanh Bình personally films and edits class reunion, alumni, travel, and sports videos. The reunion and alumni collections preserve archival university photos and footage that can no longer be filmed today.
+
+- **Class reunion:** “HUMG-Geophysics K31 Oct.2023.”
+- **Alumni gatherings:** “HUMG-K31 Student Time,” “Hội khoá K31 Mỏ địa chất theo dòng thời gian,” “Hội khoá K31 Mỏ địa chất thời sinh viên,” and “Hội khoá 31 Mỏ địa chất 2023.”
+- **Travel and sports:** “The Trip to Celebrate 2024 Year End & New Year 2025,” “Golden Week Trip P3-5-7 2025,” “2025 Golden Week Trip — When Friends Are Destinations,” and “Chạy Marathon Tiếp Sức.”
 
 ## Main Pages
 
