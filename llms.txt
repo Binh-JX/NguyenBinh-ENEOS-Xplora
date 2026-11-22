@@ -1,17 +1,63 @@
-# Thanh Bình Nguyễn — Personal Hub
+# Nguyen Thi Thanh Binh / Nguyễn Thị Thanh Bình
 
-> Personal site of Nguyễn Thị Thanh Bình (Thanh Bình) — geoscientist & subsurface engineer, innovation practitioner, musician, and video creator. A cinematic, multi-world personal hub documenting how ideas begin and take shape, across engineering, innovation, and music.
+## Profile
 
-## Pages
-- [Home](https://binh-jx.github.io/thanhbinh-hub/index.html): Entry cinematic and overview, with links into every world on the site.
-- [Innovation Journey](https://binh-jx.github.io/thanhbinh-hub/innovation.html): A gallery of how ideas begin — geopressure energy recovery, self-healing materials, and biomass-derived critical minerals.
-- [Music & MV World](https://binh-jx.github.io/thanhbinh-hub/music.html): Music and music-video work.
+Nguyen Thi Thanh Binh, also known as Nguyen Binh and Thanh Bình, is a multidisciplinary practitioner based in Tokyo, Japan. She is a Manager, geoscientist, and subsurface engineer at ENEOS Xplora Inc., working in the e-TEC department. Her work connects geoscience and subsurface engineering with open innovation, artificial intelligence, music, and personal video storytelling.
 
-## Profiles
+Her education includes doctoral study in Geosystem Engineering at The University of Tokyo and study at Hanoi University of Mining and Geology.
+
+## Expertise
+
+- Subsurface engineering and geoscience
+- Petroleum geology and geomechanics
+- Pore pressure prediction and sediment compaction
+- Basin analysis and carbon capture, utilization, and storage (CCUS)
+- Open innovation, technology scouting, AI-amplified R&D, and cross-disciplinary exploration
+- Vietnamese-Japanese bilingual vocal performance and lyric translation
+- Music and video production, editing, and personal storytelling
+
+## Published Geoscience Work
+
+The Geoscience world presents 12 peer-reviewed or conference publications and research on subsurface pressure, sediment compaction, pore pressure, basin stress, and diagenesis. Important subjects include the Sabah, Joetsu, Ursa, Cuu Long, Nam Con Son, and North Sea basins, as well as the Gulf of Mexico and offshore Vietnam.
+
+Selected publications listed on the site include:
+
+- “The role of mobile shale in forming fold belt anticlines and hydrocarbon accumulations in Sabah Basin, Malaysia.”
+- “Compaction of smectite-rich mudstone and its influence on pore pressure in the deepwater Joetsu Basin, Sea of Japan.”
+- “The role of fluid pressure and diagenetic cements for porosity preservation in Triassic fluvial reservoirs of the Central Graben, North Sea.”
+- “History of Pore Pressure Build Up and Slope Instability in Mud-Dominated Sediments of Ursa Basin, Gulf of Mexico Continental Slope.”
+- “Stress state in the Cuu Long and Nam Con Son basins, offshore Vietnam.”
+- “Present-day stress and pore pressure fields in the Cuu Long and Nam Con Son Basins, offshore Vietnam.”
+
+The site also records field trips and professional affiliations with the Japan Petroleum Technology Association and the Society of Petrophysicists and Well Log Analysts (SPWLA).
+
+## Innovation
+
+The Innovation world documents her approach to turning questions into R&D opportunities: observe, question, explore, challenge, reframe, identify an opportunity, validate, and act. AI is presented as expanding the landscape for search, comparison, and technical due diligence rather than replacing human thinking.
+
+Published innovation posters cover:
+
+- Geopressure as energy: “The Geopressure-to-Value Pathway” and “Five Dimensions of Operational Value.”
+- Self-healing materials: “The Problem in Hydrogen Embrittlement.”
+- Biomass-derived high-value minerals: “The Next Battery Race” and “A New Supply Chain Is Emerging.”
+
+## Music and Video
+
+Thanh Bình performs Vietnamese-Japanese bilingual cover songs and translates Japanese lyrics for her performances. Featured works include “BIỂN HÁT CHIỀU NAY (夕暮れに歌う海),” “ĐÔI BỜ,” and “MONG MANH TÌNH VỀ (儚い愛が戻る).” An original song is currently in production.
+
+Her video work includes class reunions, alumni gatherings, travel stories, and sports journeys. She personally films and edits these videos, preserving reunion and travel memories.
+
+## Main Pages
+
+- [Home](https://nguyenbinh-eneos.vercel.app/)
+- [Geoscience](https://nguyenbinh-eneos.vercel.app/geoscience.html)
+- [Innovation](https://nguyenbinh-eneos.vercel.app/innovation.html)
+- [Music and MV](https://nguyenbinh-eneos.vercel.app/music.html)
+- [Video Creation](https://nguyenbinh-eneos.vercel.app/video.html)
+
+## Professional Profiles
+
 - [GitHub](https://github.com/Binh-JX)
 - [YouTube](https://www.youtube.com/@ThanhBinhNguyen-kg7xr)
 - [ResearchGate](https://www.researchgate.net/profile/Nguyen-Binh-24)
 - [ORCID](https://orcid.org/0009-0007-7727-990X)
-
-## Notes
-- More worlds (Geoscience, Video Creation) are planned but not yet published; this file will be updated once they go live.
